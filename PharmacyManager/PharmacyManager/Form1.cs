@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DTO;
+using BUS;
 
 namespace PharmacyManager
 {
 
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        BUS_THUOC tv = new BUS_THUOC();
         Image closeImage, closeImageAct;
         public Form1()
         {
@@ -20,6 +23,14 @@ namespace PharmacyManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Đổ dữ liệu vào gridControl
+            BindingSource bs = new BindingSource();
+            tv.Get_THUOC();
+            bs.DataSource = tv.Get_THUOC().Tables["THUOC"];
+            grid_a.DataSource = bs;
+
+
+
             Size mysize = new System.Drawing.Size(20, 20);
             Bitmap bt = new Bitmap(Properties.Resources.close);
             Bitmap btm = new Bitmap(bt, mysize);
@@ -32,6 +43,7 @@ namespace PharmacyManager
             menu.Padding = new Point(30);
             menu.TabPages.Remove(tab_dsdonthuoc);
             menu.TabPages.Remove(tab_baocaohang);
+            menu.TabPages.Remove(tab_kho);
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -103,6 +115,24 @@ namespace PharmacyManager
                     menu.TabPages.Remove(menu.SelectedTab);
 
             }
+        }
+
+        private void btnTonKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (menu.TabPages.Contains(tab_kho) == false)
+                menu.TabPages.Add(tab_kho);
+            menu.SelectedTab = tab_kho;
+        }
+        TabPage mouseTab = null;
+
+        private void menu_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

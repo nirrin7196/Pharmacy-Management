@@ -59,10 +59,25 @@
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.menu = new System.Windows.Forms.TabControl();
             this.tab_DonBan = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tab_dsdonthuoc = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_a = new System.Windows.Forms.Button();
             this.tab_baocaohang = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tab_kho = new System.Windows.Forms.TabPage();
+            this.grid_a = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.menu.SuspendLayout();
+            this.tab_DonBan.SuspendLayout();
+            this.tab_dsdonthuoc.SuspendLayout();
+            this.tab_baocaohang.SuspendLayout();
+            this.tab_kho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_a)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -137,10 +152,11 @@
             // 
             // btnTonKho
             // 
-            this.btnTonKho.Caption = "Tồn Kho";
+            this.btnTonKho.Caption = "Kho";
             this.btnTonKho.Id = 6;
             this.btnTonKho.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_storage;
             this.btnTonKho.Name = "btnTonKho";
+            this.btnTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTonKho_ItemClick);
             // 
             // btnKiemKeLo
             // 
@@ -235,6 +251,7 @@
             this.btnThoat.Id = 20;
             this.btnThoat.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_thoat;
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // homeTab
             // 
@@ -300,6 +317,7 @@
             this.menu.Controls.Add(this.tab_DonBan);
             this.menu.Controls.Add(this.tab_dsdonthuoc);
             this.menu.Controls.Add(this.tab_baocaohang);
+            this.menu.Controls.Add(this.tab_kho);
             this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menu.Location = new System.Drawing.Point(0, 157);
             this.menu.Name = "menu";
@@ -308,9 +326,12 @@
             this.menu.TabIndex = 3;
             this.menu.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.menu_DrawItem);
             this.menu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.menu_MouseClick);
+            this.menu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menu_MouseMove);
             // 
             // tab_DonBan
             // 
+            this.tab_DonBan.Controls.Add(this.label2);
+            this.tab_DonBan.Controls.Add(this.label1);
             this.tab_DonBan.Location = new System.Drawing.Point(4, 28);
             this.tab_DonBan.Name = "tab_DonBan";
             this.tab_DonBan.Padding = new System.Windows.Forms.Padding(3);
@@ -320,8 +341,30 @@
             this.tab_DonBan.UseVisualStyleBackColor = true;
             this.tab_DonBan.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tab_DonBan_MouseClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(263, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(310, 36);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Đây là Tab Bán thuốc";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(210, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // tab_dsdonthuoc
             // 
+            this.tab_dsdonthuoc.Controls.Add(this.label3);
+            this.tab_dsdonthuoc.Controls.Add(this.btn_a);
             this.tab_dsdonthuoc.Location = new System.Drawing.Point(4, 28);
             this.tab_dsdonthuoc.Name = "tab_dsdonthuoc";
             this.tab_dsdonthuoc.Padding = new System.Windows.Forms.Padding(3);
@@ -330,8 +373,29 @@
             this.tab_dsdonthuoc.Text = "Danh Sách Đơn Thuốc";
             this.tab_dsdonthuoc.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(165, 229);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(250, 36);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Đây là Tab Thứ 2";
+            // 
+            // btn_a
+            // 
+            this.btn_a.Location = new System.Drawing.Point(203, 24);
+            this.btn_a.Name = "btn_a";
+            this.btn_a.Size = new System.Drawing.Size(229, 170);
+            this.btn_a.TabIndex = 0;
+            this.btn_a.Text = "button1";
+            this.btn_a.UseVisualStyleBackColor = true;
+            // 
             // tab_baocaohang
             // 
+            this.tab_baocaohang.Controls.Add(this.label4);
             this.tab_baocaohang.Location = new System.Drawing.Point(4, 28);
             this.tab_baocaohang.Name = "tab_baocaohang";
             this.tab_baocaohang.Padding = new System.Windows.Forms.Padding(3);
@@ -339,6 +403,52 @@
             this.tab_baocaohang.TabIndex = 2;
             this.tab_baocaohang.Text = "Báo Cáo Bán Hàng";
             this.tab_baocaohang.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(172, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(286, 36);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Đây là Tab Báo Cáo";
+            // 
+            // tab_kho
+            // 
+            this.tab_kho.Controls.Add(this.panel1);
+            this.tab_kho.Controls.Add(this.grid_a);
+            this.tab_kho.Location = new System.Drawing.Point(4, 28);
+            this.tab_kho.Name = "tab_kho";
+            this.tab_kho.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_kho.Size = new System.Drawing.Size(1368, 594);
+            this.tab_kho.TabIndex = 3;
+            this.tab_kho.Text = "Kho";
+            this.tab_kho.UseVisualStyleBackColor = true;
+            // 
+            // grid_a
+            // 
+            this.grid_a.Location = new System.Drawing.Point(119, 6);
+            this.grid_a.MainView = this.gridView1;
+            this.grid_a.MenuManager = this.ribbonControl1;
+            this.grid_a.Name = "grid_a";
+            this.grid_a.Size = new System.Drawing.Size(671, 207);
+            this.grid_a.TabIndex = 1;
+            this.grid_a.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.grid_a;
+            this.gridView1.Name = "gridView1";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(119, 262);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(671, 147);
+            this.panel1.TabIndex = 2;
             // 
             // Form1
             // 
@@ -358,6 +468,15 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.menu.ResumeLayout(false);
+            this.tab_DonBan.ResumeLayout(false);
+            this.tab_DonBan.PerformLayout();
+            this.tab_dsdonthuoc.ResumeLayout(false);
+            this.tab_dsdonthuoc.PerformLayout();
+            this.tab_baocaohang.ResumeLayout(false);
+            this.tab_baocaohang.PerformLayout();
+            this.tab_kho.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_a)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,6 +516,15 @@
         private System.Windows.Forms.TabPage tab_DonBan;
         private System.Windows.Forms.TabPage tab_dsdonthuoc;
         private System.Windows.Forms.TabPage tab_baocaohang;
+        private System.Windows.Forms.Button btn_a;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tab_kho;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraGrid.GridControl grid_a;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
 
