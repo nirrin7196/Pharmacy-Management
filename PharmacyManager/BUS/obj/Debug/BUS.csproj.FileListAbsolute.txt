@@ -1,0 +1,9 @@
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\BUS.dll
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\BUS.pdb
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DAL.dll
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DTO.dll
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DAL.pdb
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DTO.pdb
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.dll
+D:\ooad\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.pdb

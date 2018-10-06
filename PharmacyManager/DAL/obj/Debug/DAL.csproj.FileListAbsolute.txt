@@ -1,0 +1,7 @@
+D:\ooad\Pharmacy-Management\PharmacyManager\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\ooad\Pharmacy-Management\PharmacyManager\DAL\bin\Debug\DAL.dll
+D:\ooad\Pharmacy-Management\PharmacyManager\DAL\bin\Debug\DAL.pdb
+D:\ooad\Pharmacy-Management\PharmacyManager\DAL\bin\Debug\DTO.dll
+D:\ooad\Pharmacy-Management\PharmacyManager\DAL\bin\Debug\DTO.pdb
+D:\ooad\Pharmacy-Management\PharmacyManager\DAL\obj\Debug\DAL.dll
+D:\ooad\Pharmacy-Management\PharmacyManager\DAL\obj\Debug\DAL.pdb
