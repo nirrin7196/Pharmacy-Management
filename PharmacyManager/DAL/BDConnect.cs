@@ -10,7 +10,7 @@ namespace DAL
 {
     public class BDConnect
     {
-        public SqlConnection _cn = new SqlConnection("Data Source=ASUS\\SQLEXPRESS;Initial Catalog=QUANLYNHATHUOC;Integrated Security=True"); 
+        public SqlConnection _cn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=QUANLYNHATHUOC;Integrated Security=True"); 
 
     }
 }
