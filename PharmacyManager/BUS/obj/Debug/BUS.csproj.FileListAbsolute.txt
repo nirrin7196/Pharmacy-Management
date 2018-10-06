@@ -7,3 +7,14 @@ D:\ooad\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DTO.pdb
 D:\ooad\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 D:\ooad\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.dll
 D:\ooad\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.pdb
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\BUS.dll
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\BUS.pdb
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DAL.dll
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DTO.dll
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DAL.pdb
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\bin\Debug\DTO.pdb
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.dll
+D:\Projects\Four Year\Pharmacy-Management\PharmacyManager\BUS\obj\Debug\BUS.pdb
