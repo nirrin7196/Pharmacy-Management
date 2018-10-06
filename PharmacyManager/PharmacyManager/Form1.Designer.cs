@@ -57,22 +57,27 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.menu = new System.Windows.Forms.TabControl();
+            this.tab_DonBan = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tab_dsdonthuoc = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_a = new System.Windows.Forms.Button();
+            this.tab_baocaohang = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tab_kho = new System.Windows.Forms.TabPage();
+            this.grid_a = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            this.menu.SuspendLayout();
+            this.tab_DonBan.SuspendLayout();
+            this.tab_dsdonthuoc.SuspendLayout();
+            this.tab_baocaohang.SuspendLayout();
+            this.tab_kho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_a)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -107,7 +112,7 @@
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.homeTab});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1930, 196);
+            this.ribbonControl1.Size = new System.Drawing.Size(1376, 157);
             // 
             // btnDonBanThuoc
             // 
@@ -115,6 +120,7 @@
             this.btnDonBanThuoc.Id = 1;
             this.btnDonBanThuoc.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_don_thuoc;
             this.btnDonBanThuoc.Name = "btnDonBanThuoc";
+            this.btnDonBanThuoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDonBanThuoc_ItemClick);
             // 
             // btnDanhSachDon
             // 
@@ -122,6 +128,7 @@
             this.btnDanhSachDon.Id = 2;
             this.btnDanhSachDon.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_danh_sach_don;
             this.btnDanhSachDon.Name = "btnDanhSachDon";
+            this.btnDanhSachDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhSachDon_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -129,6 +136,7 @@
             this.barButtonItem1.Id = 3;
             this.barButtonItem1.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_bao_cao_ban_hang;
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btnNhapKho
             // 
@@ -144,10 +152,11 @@
             // 
             // btnTonKho
             // 
-            this.btnTonKho.Caption = "Tồn Kho";
+            this.btnTonKho.Caption = "Kho";
             this.btnTonKho.Id = 6;
             this.btnTonKho.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_storage;
             this.btnTonKho.Name = "btnTonKho";
+            this.btnTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTonKho_ItemClick);
             // 
             // btnKiemKeLo
             // 
@@ -242,6 +251,7 @@
             this.btnThoat.Id = 20;
             this.btnThoat.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_thoat;
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // homeTab
             // 
@@ -302,95 +312,152 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blueprint";
             // 
-            // xtraTabPage2
+            // menu
             // 
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1924, 702);
-            this.xtraTabPage2.Text = "Báo Cáo Bán Hàng";
+            this.menu.Controls.Add(this.tab_DonBan);
+            this.menu.Controls.Add(this.tab_dsdonthuoc);
+            this.menu.Controls.Add(this.tab_baocaohang);
+            this.menu.Controls.Add(this.tab_kho);
+            this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menu.Location = new System.Drawing.Point(0, 157);
+            this.menu.Name = "menu";
+            this.menu.SelectedIndex = 0;
+            this.menu.Size = new System.Drawing.Size(1376, 626);
+            this.menu.TabIndex = 3;
+            this.menu.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.menu_DrawItem);
+            this.menu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.menu_MouseClick);
+            this.menu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menu_MouseMove);
             // 
-            // xtraTabPage1
+            // tab_DonBan
             // 
-            this.xtraTabPage1.Appearance.PageClient.BackColor = System.Drawing.Color.White;
-            this.xtraTabPage1.Appearance.PageClient.Options.UseBackColor = true;
-            this.xtraTabPage1.Controls.Add(this.panelControl1);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1924, 702);
-            this.xtraTabPage1.Text = "Đơn Bán Thuốc";
+            this.tab_DonBan.Controls.Add(this.label2);
+            this.tab_DonBan.Controls.Add(this.label1);
+            this.tab_DonBan.Location = new System.Drawing.Point(4, 28);
+            this.tab_DonBan.Name = "tab_DonBan";
+            this.tab_DonBan.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_DonBan.Size = new System.Drawing.Size(1368, 594);
+            this.tab_DonBan.TabIndex = 0;
+            this.tab_DonBan.Text = "Đơn Bán Thuốc";
+            this.tab_DonBan.UseVisualStyleBackColor = true;
+            this.tab_DonBan.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tab_DonBan_MouseClick);
             // 
-            // panelControl1
+            // label2
             // 
-            this.panelControl1.Appearance.BackColor = System.Drawing.Color.White;
-            this.panelControl1.Appearance.Options.UseBackColor = true;
-            this.panelControl1.Controls.Add(this.gridControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1924, 702);
-            this.panelControl1.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(263, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(310, 36);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Đây là Tab Bán thuốc";
             // 
-            // gridControl1
+            // label1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(380, 38);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.ribbonControl1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(720, 237);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(210, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // tab_dsdonthuoc
+            // 
+            this.tab_dsdonthuoc.Controls.Add(this.label3);
+            this.tab_dsdonthuoc.Controls.Add(this.btn_a);
+            this.tab_dsdonthuoc.Location = new System.Drawing.Point(4, 28);
+            this.tab_dsdonthuoc.Name = "tab_dsdonthuoc";
+            this.tab_dsdonthuoc.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_dsdonthuoc.Size = new System.Drawing.Size(1368, 594);
+            this.tab_dsdonthuoc.TabIndex = 1;
+            this.tab_dsdonthuoc.Text = "Danh Sách Đơn Thuốc";
+            this.tab_dsdonthuoc.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(165, 229);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(250, 36);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Đây là Tab Thứ 2";
+            // 
+            // btn_a
+            // 
+            this.btn_a.Location = new System.Drawing.Point(203, 24);
+            this.btn_a.Name = "btn_a";
+            this.btn_a.Size = new System.Drawing.Size(229, 170);
+            this.btn_a.TabIndex = 0;
+            this.btn_a.Text = "button1";
+            this.btn_a.UseVisualStyleBackColor = true;
+            // 
+            // tab_baocaohang
+            // 
+            this.tab_baocaohang.Controls.Add(this.label4);
+            this.tab_baocaohang.Location = new System.Drawing.Point(4, 28);
+            this.tab_baocaohang.Name = "tab_baocaohang";
+            this.tab_baocaohang.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_baocaohang.Size = new System.Drawing.Size(1368, 594);
+            this.tab_baocaohang.TabIndex = 2;
+            this.tab_baocaohang.Text = "Báo Cáo Bán Hàng";
+            this.tab_baocaohang.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(172, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(286, 36);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Đây là Tab Báo Cáo";
+            // 
+            // tab_kho
+            // 
+            this.tab_kho.Controls.Add(this.panel1);
+            this.tab_kho.Controls.Add(this.grid_a);
+            this.tab_kho.Location = new System.Drawing.Point(4, 28);
+            this.tab_kho.Name = "tab_kho";
+            this.tab_kho.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_kho.Size = new System.Drawing.Size(1368, 594);
+            this.tab_kho.TabIndex = 3;
+            this.tab_kho.Text = "Kho";
+            this.tab_kho.UseVisualStyleBackColor = true;
+            // 
+            // grid_a
+            // 
+            this.grid_a.Location = new System.Drawing.Point(119, 6);
+            this.grid_a.MainView = this.gridView1;
+            this.grid_a.MenuManager = this.ribbonControl1;
+            this.grid_a.Name = "grid_a";
+            this.grid_a.Size = new System.Drawing.Size(671, 207);
+            this.grid_a.TabIndex = 1;
+            this.grid_a.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.White;
-            this.gridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.grid_a;
             this.gridView1.Name = "gridView1";
             // 
-            // gridColumn1
+            // panel1
             // 
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xtraTabControl1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.xtraTabControl1.Appearance.Options.UseBackColor = true;
-            this.xtraTabControl1.Appearance.Options.UseForeColor = true;
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 196);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage2;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1930, 738);
-            this.xtraTabControl1.TabIndex = 1;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.panel1.Location = new System.Drawing.Point(119, 262);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(671, 147);
+            this.panel1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1930, 934);
-            this.Controls.Add(this.xtraTabControl1);
+            this.ClientSize = new System.Drawing.Size(1376, 783);
+            this.Controls.Add(this.menu);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -400,13 +467,16 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            this.xtraTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            this.menu.ResumeLayout(false);
+            this.tab_DonBan.ResumeLayout(false);
+            this.tab_DonBan.PerformLayout();
+            this.tab_dsdonthuoc.ResumeLayout(false);
+            this.tab_dsdonthuoc.PerformLayout();
+            this.tab_baocaohang.ResumeLayout(false);
+            this.tab_baocaohang.PerformLayout();
+            this.tab_kho.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_a)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,14 +512,19 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private System.Windows.Forms.TabControl menu;
+        private System.Windows.Forms.TabPage tab_DonBan;
+        private System.Windows.Forms.TabPage tab_dsdonthuoc;
+        private System.Windows.Forms.TabPage tab_baocaohang;
+        private System.Windows.Forms.Button btn_a;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tab_kho;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraGrid.GridControl grid_a;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
 
