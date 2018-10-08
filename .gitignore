@@ -1,3 +1,9 @@
 PharmacyManager/PharmacyManager/bin/Debug/
 PharmacyManager/PharmacyManager/obj/Debug/
 PharmacyManager/.vs
+PharmacyManager/DAL/obj
+PharmacyManager/DAL/bin
+PharmacyManager/BUS/obj
+PharmacyManager/BUS/bin
+PharmacyManager/DTO/obj
+PharmacyManager/DTO/bin
