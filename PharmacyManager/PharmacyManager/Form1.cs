@@ -17,7 +17,6 @@ namespace PharmacyManager
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         BUS_THUOC tv = new BUS_THUOC();
-        Image closeImage, closeImageAct;
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +29,8 @@ namespace PharmacyManager
             //tv.Get_THUOC();
             //bs.DataSource = tv.Get_THUOC().Tables["THUOC"];
             //grid_a.DataSource = bs;
-
+            UserControlMain.DonBanThuoc ucDonBanThuoc = new UserControlMain.DonBanThuoc();
+            addTabControl(ucDonBanThuoc, "Đơn Bán Thuốc", "close");
 
 
             //Size mysize = new System.Drawing.Size(20, 20);
@@ -127,7 +127,6 @@ namespace PharmacyManager
             //    menu.TabPages.Add(tab_kho);
             //menu.SelectedTab = tab_kho;
         }
-        TabPage mouseTab = null;
 
         private void menu_MouseMove(object sender, MouseEventArgs e)
         {

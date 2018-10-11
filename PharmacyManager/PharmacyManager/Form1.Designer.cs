@@ -299,9 +299,13 @@
             this.xtraTabControlMain.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.xtraTabControlMain.Appearance.Options.UseBackColor = true;
             this.xtraTabControlMain.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
+            this.xtraTabControlMain.CustomHeaderButtons.AddRange(new DevExpress.XtraTab.Buttons.CustomHeaderButton[] {
+            new DevExpress.XtraTab.Buttons.CustomHeaderButton()});
             this.xtraTabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControlMain.Location = new System.Drawing.Point(0, 196);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
+            this.xtraTabControlMain.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Far;
+            this.xtraTabControlMain.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabControlMain.Size = new System.Drawing.Size(1376, 587);
             this.xtraTabControlMain.TabIndex = 5;
             this.xtraTabControlMain.CloseButtonClick += new System.EventHandler(this.xtraTabControlMain_CloseButtonClick);
