@@ -123,9 +123,8 @@ namespace PharmacyManager
 
         private void btnTonKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (menu.TabPages.Contains(tab_kho) == false)
-            //    menu.TabPages.Add(tab_kho);
-            //menu.SelectedTab = tab_kho;
+            UserControlMain.Kho ucKho = new UserControlMain.Kho();
+            addTabControl(ucKho, "Kho", "close");
         }
 
         private void menu_MouseMove(object sender, MouseEventArgs e)
@@ -162,6 +161,12 @@ namespace PharmacyManager
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnKiemKeLo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlMain.KiemKeTheoLo ucKiemKeLo = new UserControlMain.KiemKeTheoLo();
+            addTabControl(ucKiemKeLo, "Kiểm kê theo lô", "close");
         }
     }
 }

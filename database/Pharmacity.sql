@@ -1,5 +1,4 @@
-
-CREATE DATABASE QUANLYNHATHUOC
+﻿CREATE DATABASE QUANLYNHATHUOC
 
 GO
 SET DATEFORMAT DMY
@@ -68,7 +67,7 @@ CREATE TABLE DONNHAP
 )
 
 GO
-CREATE TABLE KHO
+CREATE TABLE CTDN
 (
 	MaThuoc VARCHAR(20) NOT NULL REFERENCES THUOC(MaThuoc),
 	MaDonNhap VARCHAR(10) NOT NULL REFERENCES DONNHAP(MaDonNhap),
@@ -95,7 +94,7 @@ CREATE TABLE QUYEN
 	CONSTRAINT PK_QUYEN PRIMARY KEY(TaiKhoan, BanThuoc)
 )
 
-INSERT INTO THUOC (MaThuoc, TenThuoc , HoatChat ,GiaNhap ,GiaSauThue ,GiaBan ,ThoiHanSuDung ) VALUES ('MT001', 'berberin','Chữa đau bụng',8000,9000,10000,3);
+INSERT INTO THUOC (MaThuoc, TenThuoc , HoatChat ,GiaNhap ,GiaSauThue ,GiaBan ,ThoiHanSuDung ) VALUES ('MT001', 'Aspirin','Acid Acetylsalicylic',3000,3300,4500,3);
 INSERT INTO THUOC (MaThuoc, TenThuoc , HoatChat ,GiaNhap ,GiaSauThue ,GiaBan ,ThoiHanSuDung ) VALUES ('MT002', 'PROBIO', 'Vitamin B1,B2,B3', 3000, 3300, 4000, 1);
 INSERT INTO THUOC (MaThuoc, TenThuoc , HoatChat ,GiaNhap ,GiaSauThue ,GiaBan ,ThoiHanSuDung ) VALUES ('MT003', 'ACTAPULGITE', 'Attapulgite mormoiron 3g', 2000, 2200, 3500, 3);
 INSERT INTO THUOC (MaThuoc, TenThuoc , HoatChat ,GiaNhap ,GiaSauThue ,GiaBan ,ThoiHanSuDung ) VALUES ('MT004', 'PMS-DIVACAL', 'Calci D', 3000, 3300, 3500, 2);
@@ -105,18 +104,18 @@ INSERT INTO THUOC (MaThuoc, TenThuoc , HoatChat ,GiaNhap ,GiaSauThue ,GiaBan ,Th
 INSERT INTO THUOC (MaThuoc, TenThuoc , HoatChat ,GiaNhap ,GiaSauThue ,GiaBan ,ThoiHanSuDung ) VALUES ('MT008', 'OTIV', 'Blueberry', 8000, 8800, 9500, 3);
 
 
-INSERT INTO DUOCSY (MaDuocSy, TenDuocSy, BangCap, NgayVaoLam, Luong) VALUES ('MDS001', 'Nguyễn Duy Khánh', 'Đại học', '22/01/2018', 6000000);
-INSERT INTO DUOCSY (MaDuocSy, TenDuocSy, BangCap, NgayVaoLam, Luong) VALUES ('MDS002', 'Huỳnh Văn Tô Nis', 'Đại học', '14/02/2018', 6000000);
-INSERT INTO DUOCSY (MaDuocSy, TenDuocSy, BangCap, NgayVaoLam, Luong) VALUES ('MDS003', 'Võ Hoàng Duy', 'Cao đẳng', '25/06/2018', 4800000);
-INSERT INTO DUOCSY (MaDuocSy, TenDuocSy, BangCap, NgayVaoLam, Luong) VALUES ('MDS004', 'Võ Hoàng Kha', 'Trung cấp', '22/08/2018', 4000000);
+INSERT INTO DUOCSY (MaDuocSy, TenDuocSy, BangCap, NgayVaoLam, Luong) VALUES ('MDS001', N'Nguyễn Duy Khánh', N'Đại học', '22/01/2018', 6000000);
+INSERT INTO DUOCSY (MaDuocSy, TenDuocSy, BangCap, NgayVaoLam, Luong) VALUES ('MDS002', N'Huỳnh Văn Tô Nis', N'Đại học', '14/02/2018', 6000000);
+INSERT INTO DUOCSY (MaDuocSy, TenDuocSy, BangCap, NgayVaoLam, Luong) VALUES ('MDS003', N'Võ Hoàng Duy', N'Cao đẳng', '25/06/2018', 4800000);
+INSERT INTO DUOCSY (MaDuocSy, TenDuocSy, BangCap, NgayVaoLam, Luong) VALUES ('MDS004', N'Võ Hoàng Kha', N'Trung cấp', '22/08/2018', 4000000);
 
 
-INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB001', 1, '07/09/2018', 'MDS001', 'Hạ sốt');
-INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB002', 1, '08/09/2018', 'MDS001', 'Cảm');
-INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB003', 0, '08/09/2018', 'MDS002', 'Vitamin');
-INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB004', 1, '09/09/2018', 'MDS003', 'Bổ não');
-INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB005', 1, '10/09/2018', 'MDS004', 'Ho, đau họng');
-INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB006', 0, '10/09/2018', 'MDS002', 'Panadol');
+INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB001', 1, '07/09/2018', 'MDS001', N'Hạ sốt');
+INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB002', 1, '08/09/2018', 'MDS001', N'Cảm');
+INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB003', 0, '08/09/2018', 'MDS002', N'Vitamin');
+INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB004', 1, '09/09/2018', 'MDS003', N'Bổ não');
+INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB005', 1, '10/09/2018', 'MDS004', N'Ho, đau họng');
+INSERT INTO DONBAN (MaDonBan, LoaiDon, NgayBan, MaDuocSy, TacDung) VALUES ('MDB006', 0, '10/09/2018', 'MDS002', N'Panadol');
 
 
 INSERT INTO CTDONTHUOC VALUES ('MDB001', 'MT005', 3, '07/09/2020', 1); 
@@ -128,10 +127,10 @@ INSERT INTO CTDONTHUOC VALUES ('MDB005', 'MT007', 3, '10/09/2020', 1);
 INSERT INTO CTDONTHUOC VALUES ('MDB006', 'MT006', 300, '10/09/2020', 0);
 
 
-INSERT INTO CONGTY (MaCongTy, TenCongTy, DiaChi) VALUES ('MCT001', 'Tuệ Linh', '156/17 Tô Hiến Thành, Phường 15, Quận 10, Hồ Chí Minh');
-INSERT INTO CONGTY (MaCongTy, TenCongTy, DiaChi) VALUES ('MCT002', 'CTY CP DP MEXPHARM', 'Đường số 2A, Bình Hưng Hoà B, Bình Tân, Hồ Chí Minh');
-INSERT INTO CONGTY (MaCongTy, TenCongTy, DiaChi) VALUES ('MCT003', 'CTY TNHH MTV DP TW 2', '334 Tô Hiến Thành, Phường 14, Quận 10');
-INSERT INTO CONGTY (MaCongTy, TenCongTy, DiaChi) VALUES ('MCT004', 'CTY CP Sao Thái Dương', '92 Phố Vĩnh Hưng, Phường Vĩnh Hưng, Hoàng Mai, Hà Nội');
+INSERT INTO CONGTY (MaCongTy, TenCongTy, DiaChi) VALUES ('MCT001', N'Tuệ Linh', N'156/17 Tô Hiến Thành, Phường 15, Quận 10, Hồ Chí Minh');
+INSERT INTO CONGTY (MaCongTy, TenCongTy, DiaChi) VALUES ('MCT002', N'CTY CP DP MEXPHARM', N'Đường số 2A, Bình Hưng Hoà B, Bình Tân, Hồ Chí Minh');
+INSERT INTO CONGTY (MaCongTy, TenCongTy, DiaChi) VALUES ('MCT003', N'CTY TNHH MTV DP TW 2', N'334 Tô Hiến Thành, Phường 14, Quận 10');
+INSERT INTO CONGTY (MaCongTy, TenCongTy, DiaChi) VALUES ('MCT004', N'CTY CP Sao Thái Dương', N'92 Phố Vĩnh Hưng, Phường Vĩnh Hưng, Hoàng Mai, Hà Nội');
 
 
 INSERT INTO DONNHAP (MaDonNhap, NgayNhap, MaCongTy, MaDuocSy) VALUES ('MDN001', '08/08/2018', 'MCT002', 'MDS001');
@@ -139,14 +138,14 @@ INSERT INTO DONNHAP (MaDonNhap, NgayNhap, MaCongTy, MaDuocSy) VALUES ('MDN002', 
 INSERT INTO DONNHAP (MaDonNhap, NgayNhap, MaCongTy, MaDuocSy) VALUES ('MDN003', '09/08/2018', 'MCT001', 'MDS002');
 
 
-INSERT INTO KHO VALUES ('MT002', 'MDN001', 500, '08/08/2019');
-INSERT INTO KHO VALUES ('MT004', 'MDN001', 1000, '08/08/2020');
-INSERT INTO KHO VALUES ('MT001', 'MDN002', 2000, '08/08/2021');
-INSERT INTO KHO VALUES ('MT006', 'MDN002', 1500, '08/08/2020');
-INSERT INTO KHO VALUES ('MT007', 'MDN002', 1000, '08/08/2020');
-INSERT INTO KHO VALUES ('MT003', 'MDN003', 1200, '09/08/2020');
-INSERT INTO KHO VALUES ('MT005', 'MDN003', 1000, '09/08/2020');
-INSERT INTO KHO VALUES ('MT008', 'MDN003', 800, '09/08/2021');
+INSERT INTO CTDN VALUES ('MT002', 'MDN001', 500, '08/08/2019');
+INSERT INTO CTDN VALUES ('MT004', 'MDN001', 1000, '08/08/2020');
+INSERT INTO CTDN VALUES ('MT001', 'MDN002', 2000, '08/08/2021');
+INSERT INTO CTDN VALUES ('MT006', 'MDN002', 1500, '08/08/2020');
+INSERT INTO CTDN VALUES ('MT007', 'MDN002', 1000, '08/08/2020');
+INSERT INTO CTDN VALUES ('MT003', 'MDN003', 1200, '09/08/2020');
+INSERT INTO CTDN VALUES ('MT005', 'MDN003', 1000, '09/08/2020');
+INSERT INTO CTDN VALUES ('MT008', 'MDN003', 800, '09/08/2021');
 
 
 INSERT INTO TAIKHOAN (TaiKhoan, MatKhau, MaDuocSy) VALUES ('duykhanh01', 'Khanh001', 'MDS001');
@@ -160,4 +159,4 @@ INSERT INTO TAIKHOAN (TaiKhoan, MatKhau, MaDuocSy) VALUES ('khavo', 'Kha004', 'M
 
 select MaThuoc 'Mã Thuốc', TenThuoc 'Tên Thuốc', HoatChat 'Hoạt Chất',GiaNhap 'Giá Nhập',GiaSauThue 'Giá Sau Thuế',GiaBan 'Giá Bán',ThoiHanSuDung 'Thời Hạn Sử Dụng'  from THUOC
 
-select * from DONBAN
+select * from CONGTY
