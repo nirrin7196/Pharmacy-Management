@@ -32,6 +32,14 @@
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
+            this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
+            this.txtTongCong = new DevExpress.XtraEditors.TextEdit();
+            this.lblTongCong = new DevExpress.XtraEditors.LabelControl();
+            this.txtTienThue = new DevExpress.XtraEditors.TextEdit();
+            this.txtPhiDichVu = new DevExpress.XtraEditors.TextEdit();
+            this.lblTienThue = new DevExpress.XtraEditors.LabelControl();
+            this.lblPhiDichVu = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
             this.btnInHoaDon = new DevExpress.XtraEditors.SimpleButton();
             this.btnThanhToan = new DevExpress.XtraEditors.SimpleButton();
@@ -40,26 +48,18 @@
             this.sidePanel3 = new DevExpress.XtraEditors.SidePanel();
             this.gridControlDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
-            this.txtTongCong = new DevExpress.XtraEditors.TextEdit();
-            this.lblTongCong = new DevExpress.XtraEditors.LabelControl();
-            this.txtTienThue = new DevExpress.XtraEditors.TextEdit();
-            this.txtPhiDichVu = new DevExpress.XtraEditors.TextEdit();
-            this.lblTienThue = new DevExpress.XtraEditors.LabelControl();
-            this.lblPhiDichVu = new DevExpress.XtraEditors.LabelControl();
-            this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.sidePanel1.SuspendLayout();
-            this.sidePanel2.SuspendLayout();
-            this.sidePanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlDanhSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.sidePanel5.SuspendLayout();
             this.sidePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongCong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienThue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhiDichVu.Properties)).BeginInit();
-            this.sidePanel5.SuspendLayout();
+            this.sidePanel2.SuspendLayout();
+            this.sidePanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDanhSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl
@@ -101,83 +101,15 @@
             this.sidePanel1.TabIndex = 1;
             this.sidePanel1.Text = "sidePanel1";
             // 
-            // sidePanel2
+            // sidePanel5
             // 
-            this.sidePanel2.Controls.Add(this.btnInHoaDon);
-            this.sidePanel2.Controls.Add(this.btnThanhToan);
-            this.sidePanel2.Controls.Add(this.btnBot);
-            this.sidePanel2.Controls.Add(this.btnThem);
-            this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidePanel2.Location = new System.Drawing.Point(591, 0);
-            this.sidePanel2.Name = "sidePanel2";
-            this.sidePanel2.Size = new System.Drawing.Size(116, 656);
-            this.sidePanel2.TabIndex = 2;
-            this.sidePanel2.Text = "sidePanel2";
-            // 
-            // btnInHoaDon
-            // 
-            this.btnInHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.ImageOptions.Image")));
-            this.btnInHoaDon.Location = new System.Drawing.Point(0, 453);
-            this.btnInHoaDon.Name = "btnInHoaDon";
-            this.btnInHoaDon.Size = new System.Drawing.Size(115, 70);
-            this.btnInHoaDon.TabIndex = 2;
-            this.btnInHoaDon.Text = "In hóa đơn";
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.Image")));
-            this.btnThanhToan.Location = new System.Drawing.Point(0, 359);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(115, 52);
-            this.btnThanhToan.TabIndex = 2;
-            this.btnThanhToan.Text = "Thanh Toán";
-            // 
-            // btnBot
-            // 
-            this.btnBot.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBot.ImageOptions.Image")));
-            this.btnBot.Location = new System.Drawing.Point(0, 228);
-            this.btnBot.Name = "btnBot";
-            this.btnBot.Size = new System.Drawing.Size(115, 54);
-            this.btnBot.TabIndex = 1;
-            this.btnBot.Text = "Bớt";
-            this.btnBot.Click += new System.EventHandler(this.btnBot_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.Location = new System.Drawing.Point(0, 98);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(115, 53);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // sidePanel3
-            // 
-            this.sidePanel3.Controls.Add(this.gridControlDanhSach);
-            this.sidePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidePanel3.Location = new System.Drawing.Point(707, 0);
-            this.sidePanel3.Name = "sidePanel3";
-            this.sidePanel3.Size = new System.Drawing.Size(375, 656);
-            this.sidePanel3.TabIndex = 3;
-            this.sidePanel3.Text = "sidePanel3";
-            // 
-            // gridControlDanhSach
-            // 
-            this.gridControlDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDanhSach.Location = new System.Drawing.Point(0, 0);
-            this.gridControlDanhSach.MainView = this.gridView2;
-            this.gridControlDanhSach.Name = "gridControlDanhSach";
-            this.gridControlDanhSach.Size = new System.Drawing.Size(375, 656);
-            this.gridControlDanhSach.TabIndex = 0;
-            this.gridControlDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControlDanhSach;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsFind.AlwaysVisible = true;
+            this.sidePanel5.Controls.Add(this.gridControl);
+            this.sidePanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sidePanel5.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel5.Name = "sidePanel5";
+            this.sidePanel5.Size = new System.Drawing.Size(590, 453);
+            this.sidePanel5.TabIndex = 2;
+            this.sidePanel5.Text = "sidePanel5";
             // 
             // sidePanel4
             // 
@@ -293,15 +225,85 @@
             this.lblPhiDichVu.TabIndex = 16;
             this.lblPhiDichVu.Text = "Phí dịch vụ";
             // 
-            // sidePanel5
+            // sidePanel2
             // 
-            this.sidePanel5.Controls.Add(this.gridControl);
-            this.sidePanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidePanel5.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel5.Name = "sidePanel5";
-            this.sidePanel5.Size = new System.Drawing.Size(590, 453);
-            this.sidePanel5.TabIndex = 2;
-            this.sidePanel5.Text = "sidePanel5";
+            this.sidePanel2.Controls.Add(this.btnInHoaDon);
+            this.sidePanel2.Controls.Add(this.btnThanhToan);
+            this.sidePanel2.Controls.Add(this.btnBot);
+            this.sidePanel2.Controls.Add(this.btnThem);
+            this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidePanel2.Location = new System.Drawing.Point(591, 0);
+            this.sidePanel2.Name = "sidePanel2";
+            this.sidePanel2.Size = new System.Drawing.Size(116, 656);
+            this.sidePanel2.TabIndex = 2;
+            this.sidePanel2.Text = "sidePanel2";
+            // 
+            // btnInHoaDon
+            // 
+            this.btnInHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.ImageOptions.Image")));
+            this.btnInHoaDon.Location = new System.Drawing.Point(0, 453);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(115, 70);
+            this.btnInHoaDon.TabIndex = 2;
+            this.btnInHoaDon.Text = "In hóa đơn";
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.Image")));
+            this.btnThanhToan.Location = new System.Drawing.Point(0, 359);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(115, 52);
+            this.btnThanhToan.TabIndex = 2;
+            this.btnThanhToan.Text = "Thanh Toán";
+            // 
+            // btnBot
+            // 
+            this.btnBot.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBot.ImageOptions.Image")));
+            this.btnBot.Location = new System.Drawing.Point(0, 228);
+            this.btnBot.Name = "btnBot";
+            this.btnBot.Size = new System.Drawing.Size(115, 54);
+            this.btnBot.TabIndex = 1;
+            this.btnBot.Text = "Bớt";
+            this.btnBot.Click += new System.EventHandler(this.btnBot_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.Location = new System.Drawing.Point(0, 98);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(115, 53);
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // sidePanel3
+            // 
+            this.sidePanel3.Controls.Add(this.gridControlDanhSach);
+            this.sidePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sidePanel3.Location = new System.Drawing.Point(707, 0);
+            this.sidePanel3.Name = "sidePanel3";
+            this.sidePanel3.Size = new System.Drawing.Size(375, 656);
+            this.sidePanel3.TabIndex = 3;
+            this.sidePanel3.Text = "sidePanel3";
+            // 
+            // gridControlDanhSach
+            // 
+            this.gridControlDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlDanhSach.Location = new System.Drawing.Point(0, 0);
+            this.gridControlDanhSach.MainView = this.gridView2;
+            this.gridControlDanhSach.Name = "gridControlDanhSach";
+            this.gridControlDanhSach.Size = new System.Drawing.Size(375, 656);
+            this.gridControlDanhSach.TabIndex = 0;
+            this.gridControlDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControlDanhSach;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsFind.AlwaysVisible = true;
+            this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
             // DonBanThuoc
             // 
@@ -317,16 +319,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.sidePanel1.ResumeLayout(false);
-            this.sidePanel2.ResumeLayout(false);
-            this.sidePanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlDanhSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.sidePanel5.ResumeLayout(false);
             this.sidePanel4.ResumeLayout(false);
             this.sidePanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongCong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienThue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhiDichVu.Properties)).EndInit();
-            this.sidePanel5.ResumeLayout(false);
+            this.sidePanel2.ResumeLayout(false);
+            this.sidePanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDanhSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

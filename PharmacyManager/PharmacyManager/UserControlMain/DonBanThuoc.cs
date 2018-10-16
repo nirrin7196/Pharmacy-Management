@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace PharmacyManager.UserControlMain
 {
@@ -47,6 +50,12 @@ namespace PharmacyManager.UserControlMain
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            handleBtnThem();
+
+        }
+
+        private void handleBtnThem()
+        {
             try
             {
                 DataRowView selectedRow = (DataRowView)gridView2.GetRow(gridView2.FocusedRowHandle);
@@ -64,7 +73,8 @@ namespace PharmacyManager.UserControlMain
                 destRow[5] = 1;
                 dtThuocDaChon.Rows.Add(destRow);
                 gridControl.DataSource = dtThuocDaChon;
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Chưa Chọn Thuốc");
             }
@@ -79,6 +89,17 @@ namespace PharmacyManager.UserControlMain
         private void btnBot_Click(object sender, EventArgs e)
         {
             dtThuocDaChon.Rows.RemoveAt(gridView1.GetSelectedRows()[0]);
+        }
+
+        private void gridView2_DoubleClick(object sender, EventArgs e)
+        {
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow || info.InRowCell)
+            {
+                handleBtnThem();
+            }
         }
     }
 }
