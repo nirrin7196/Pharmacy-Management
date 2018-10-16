@@ -48,10 +48,28 @@ namespace PharmacyManager.UserControlMain
             dtThuocDaChon.Columns.Add("Số Lượng");
         }
 
+        private void caculateBill()
+        {
+            int phidichvu=0;
+            int tienthue=0;
+            int tongcong=0;
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                phidichvu += Convert.ToInt32(gridView1.GetRowCellValue(i, "Giá Bán"));
+                tienthue += Convert.ToInt32(gridView1.GetRowCellValue(i, "GiaSauThue"));
+                tongcong += Convert.ToInt32(gridView1.GetRowCellValue(i, "GiaBan"));
+
+            }
+            this.txtPhiDichVu.EditValue = phidichvu.ToString();
+            this.txtTienThue.EditValue = tienthue.ToString();
+            this.txtTongCong.EditValue = tongcong.ToString();
+
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             handleBtnThem();
-
+            caculateBill();
         }
 
         private void handleBtnThem()
@@ -88,7 +106,14 @@ namespace PharmacyManager.UserControlMain
 
         private void btnBot_Click(object sender, EventArgs e)
         {
+            try
+            {
             dtThuocDaChon.Rows.RemoveAt(gridView1.GetSelectedRows()[0]);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Chọn loại thuốc cần xóa khỏi danh sách","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
 
         private void gridView2_DoubleClick(object sender, EventArgs e)

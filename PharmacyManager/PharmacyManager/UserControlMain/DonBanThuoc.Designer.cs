@@ -134,7 +134,9 @@
             this.txtTongCong.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongCong.Name = "txtTongCong";
             this.txtTongCong.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtTongCong.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtTongCong.Properties.Appearance.Options.UseBackColor = true;
+            this.txtTongCong.Properties.Appearance.Options.UseForeColor = true;
             this.txtTongCong.Properties.Appearance.Options.UseTextOptions = true;
             this.txtTongCong.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtTongCong.Properties.DisplayFormat.FormatString = "n0";
@@ -166,7 +168,9 @@
             this.txtTienThue.Margin = new System.Windows.Forms.Padding(4);
             this.txtTienThue.Name = "txtTienThue";
             this.txtTienThue.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtTienThue.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtTienThue.Properties.Appearance.Options.UseBackColor = true;
+            this.txtTienThue.Properties.Appearance.Options.UseForeColor = true;
             this.txtTienThue.Properties.Appearance.Options.UseTextOptions = true;
             this.txtTienThue.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtTienThue.Properties.DisplayFormat.FormatString = "n0";
@@ -182,7 +186,9 @@
             this.txtPhiDichVu.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhiDichVu.Name = "txtPhiDichVu";
             this.txtPhiDichVu.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtPhiDichVu.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtPhiDichVu.Properties.Appearance.Options.UseBackColor = true;
+            this.txtPhiDichVu.Properties.Appearance.Options.UseForeColor = true;
             this.txtPhiDichVu.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPhiDichVu.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPhiDichVu.Properties.DisplayFormat.FormatString = "n0";
@@ -234,7 +240,7 @@
             this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel2.Location = new System.Drawing.Point(591, 0);
             this.sidePanel2.Name = "sidePanel2";
-            this.sidePanel2.Size = new System.Drawing.Size(116, 656);
+            this.sidePanel2.Size = new System.Drawing.Size(132, 656);
             this.sidePanel2.TabIndex = 2;
             this.sidePanel2.Text = "sidePanel2";
             // 
@@ -243,7 +249,7 @@
             this.btnInHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.ImageOptions.Image")));
             this.btnInHoaDon.Location = new System.Drawing.Point(0, 453);
             this.btnInHoaDon.Name = "btnInHoaDon";
-            this.btnInHoaDon.Size = new System.Drawing.Size(115, 70);
+            this.btnInHoaDon.Size = new System.Drawing.Size(132, 70);
             this.btnInHoaDon.TabIndex = 2;
             this.btnInHoaDon.Text = "In hóa đơn";
             // 
@@ -252,7 +258,7 @@
             this.btnThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.Image")));
             this.btnThanhToan.Location = new System.Drawing.Point(0, 359);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(115, 52);
+            this.btnThanhToan.Size = new System.Drawing.Size(132, 52);
             this.btnThanhToan.TabIndex = 2;
             this.btnThanhToan.Text = "Thanh Toán";
             // 
@@ -261,7 +267,7 @@
             this.btnBot.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBot.ImageOptions.Image")));
             this.btnBot.Location = new System.Drawing.Point(0, 228);
             this.btnBot.Name = "btnBot";
-            this.btnBot.Size = new System.Drawing.Size(115, 54);
+            this.btnBot.Size = new System.Drawing.Size(132, 54);
             this.btnBot.TabIndex = 1;
             this.btnBot.Text = "Bớt";
             this.btnBot.Click += new System.EventHandler(this.btnBot_Click);
@@ -269,9 +275,9 @@
             // btnThem
             // 
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.Location = new System.Drawing.Point(0, 98);
+            this.btnThem.Location = new System.Drawing.Point(0, 94);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(115, 53);
+            this.btnThem.Size = new System.Drawing.Size(132, 53);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -280,9 +286,9 @@
             // 
             this.sidePanel3.Controls.Add(this.gridControlDanhSach);
             this.sidePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidePanel3.Location = new System.Drawing.Point(707, 0);
+            this.sidePanel3.Location = new System.Drawing.Point(723, 0);
             this.sidePanel3.Name = "sidePanel3";
-            this.sidePanel3.Size = new System.Drawing.Size(375, 656);
+            this.sidePanel3.Size = new System.Drawing.Size(359, 656);
             this.sidePanel3.TabIndex = 3;
             this.sidePanel3.Text = "sidePanel3";
             // 
@@ -292,7 +298,7 @@
             this.gridControlDanhSach.Location = new System.Drawing.Point(0, 0);
             this.gridControlDanhSach.MainView = this.gridView2;
             this.gridControlDanhSach.Name = "gridControlDanhSach";
-            this.gridControlDanhSach.Size = new System.Drawing.Size(375, 656);
+            this.gridControlDanhSach.Size = new System.Drawing.Size(359, 656);
             this.gridControlDanhSach.TabIndex = 0;
             this.gridControlDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
