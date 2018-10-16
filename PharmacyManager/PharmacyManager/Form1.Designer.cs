@@ -146,6 +146,7 @@
             this.btnKiemKeLo.Id = 7;
             this.btnKiemKeLo.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_kiem_ke_lo;
             this.btnKiemKeLo.Name = "btnKiemKeLo";
+            this.btnKiemKeLo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKiemKeLo_ItemClick);
             // 
             // btnKiemKeSoLuong
             // 

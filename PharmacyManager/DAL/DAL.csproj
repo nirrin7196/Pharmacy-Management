@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConnect.cs" />
+    <Compile Include="DAL_LOHANGNHAPKHO.cs" />
     <Compile Include="DAL_THUOC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
