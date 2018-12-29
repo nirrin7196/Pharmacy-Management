@@ -58,6 +58,9 @@
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,8 +71,29 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\..\..\..\..\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMain\BangGiaThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMain\BangGiaThuoc.Designer.cs">
+      <DependentUpon>BangGiaThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMain\BaoCaoBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMain\BaoCaoBanHang.Designer.cs">
+      <DependentUpon>BaoCaoBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlMain\Kho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +105,36 @@
     </Compile>
     <Compile Include="UserControlMain\KiemKeTheoLo.Designer.cs">
       <DependentUpon>KiemKeTheoLo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMain\NhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMain\NhaCungCap.Designer.cs">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMain\NhapKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMain\NhapKho.Designer.cs">
+      <DependentUpon>NhapKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMain\TaoBarCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMain\TaoBarCode.Designer.cs">
+      <DependentUpon>TaoBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMain\ThemThuocMoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMain\ThemThuocMoi.Designer.cs">
+      <DependentUpon>ThemThuocMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMain\Thuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMain\Thuoc.Designer.cs">
+      <DependentUpon>Thuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AddTab.cs" />
     <Compile Include="Form1.cs">
@@ -100,6 +154,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +168,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControlMain\BangGiaThuoc.resx">
+      <DependentUpon>BangGiaThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMain\BaoCaoBanHang.resx">
+      <DependentUpon>BaoCaoBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlMain\DonBanThuoc.resx">
       <DependentUpon>DonBanThuoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +182,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlMain\KiemKeTheoLo.resx">
       <DependentUpon>KiemKeTheoLo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMain\NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMain\NhapKho.resx">
+      <DependentUpon>NhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMain\TaoBarCode.resx">
+      <DependentUpon>TaoBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMain\ThemThuocMoi.resx">
+      <DependentUpon>ThemThuocMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMain\Thuoc.resx">
+      <DependentUpon>Thuoc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

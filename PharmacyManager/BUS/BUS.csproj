@@ -39,7 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_DonBan.cs" />
+    <Compile Include="BUS_DonNhap.cs" />
+    <Compile Include="BUS_DuocSy.cs" />
+    <Compile Include="BUS_Kho.cs" />
     <Compile Include="BUS_LOHANGNHAPKHO.cs" />
+    <Compile Include="BUS_NhaCungCap.cs" />
+    <Compile Include="BUS_TaiKhoan.cs" />
     <Compile Include="BUS_THUOC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

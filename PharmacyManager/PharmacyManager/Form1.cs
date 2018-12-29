@@ -21,6 +21,12 @@ namespace PharmacyManager
         {
             InitializeComponent();
         }
+        public Form1(string t="")
+        {
+            InitializeComponent();
+            lbl_name.Caption = t;
+            
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -46,6 +52,8 @@ namespace PharmacyManager
             //menu.TabPages.Remove(tab_dsdonthuoc);
             //menu.TabPages.Remove(tab_baocaohang);
             //menu.TabPages.Remove(tab_kho);
+
+
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -55,18 +63,12 @@ namespace PharmacyManager
 
         private void btnDonBanThuoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (menu.TabPages.Contains(tab_DonBan) == false)
-            //    menu.TabPages.Add(tab_DonBan);
-            //menu.SelectedTab = tab_DonBan;
             UserControlMain.DonBanThuoc ucDonBanThuoc = new UserControlMain.DonBanThuoc();
             addTabControl(ucDonBanThuoc, "Đơn Bán Thuốc", "close");
         }
 
         private void btnDanhSachDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (menu.TabPages.Contains(tab_dsdonthuoc) == false)
-            //    menu.TabPages.Add(tab_dsdonthuoc);
-            //menu.SelectedTab = tab_dsdonthuoc;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -167,6 +169,42 @@ namespace PharmacyManager
         {
             UserControlMain.KiemKeTheoLo ucKiemKeLo = new UserControlMain.KiemKeTheoLo();
             addTabControl(ucKiemKeLo, "Kiểm kê theo lô", "close");
+        }
+
+        private void btnNhapKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlMain.NhapKho ucNhapKho = new UserControlMain.NhapKho();
+            addTabControl(ucNhapKho, "Nhập Kho", "close");
+        }
+
+        private void btnDanhMucNhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlMain.NhaCungCap ucNcc = new UserControlMain.NhaCungCap();
+            addTabControl(ucNcc, "Nha Cung Cấp", "close");
+        }
+
+        private void btnInTemBarCode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlMain.TaoBarCode barcode = new UserControlMain.TaoBarCode();
+            addTabControl(barcode, "Tạo BarCode", "close");
+        }
+
+        private void btn_BaoCaoBanHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlMain.BaoCaoBanHang bcBanHang = new UserControlMain.BaoCaoBanHang();
+            addTabControl(bcBanHang, "Báo Cáo Bán Hàng", "close");
+        }
+
+        private void btnBangGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlMain.BangGiaThuoc BangGia = new UserControlMain.BangGiaThuoc();
+            addTabControl(BangGia, "Bảng Giá Thuốc", "close");
+        }
+
+        private void btnDanhMucHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlMain.ThemThuocMoi ThuocMoi = new UserControlMain.ThemThuocMoi();
+            addTabControl(ThuocMoi, "Danh Mục Hàng", "close");
         }
     }
 }

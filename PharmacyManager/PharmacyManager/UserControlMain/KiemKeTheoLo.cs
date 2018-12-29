@@ -28,7 +28,6 @@ namespace PharmacyManager.UserControlMain
             bs.DataSource = lh.Get_LOHANGNHAPKHO().Tables["DONNHAP,DUOCSY"];
             grid_KiemKeTheoLo.DataSource = bs;
 
-
             DataRowView selectedRow = (DataRowView)gridView1.GetRow(gridView1.FocusedRowHandle);
             string t = selectedRow.Row.ItemArray[0].ToString();
             BindingSource b = new BindingSource();
@@ -47,9 +46,5 @@ namespace PharmacyManager.UserControlMain
             b.DataSource = lh.Get_CTDN(t).Tables["CTDN"];
             grid_CTDN.DataSource = b;
         }
-
-        
-
-        
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PharmacyManager.UserControlMain
 {
-    partial class Kho
+    partial class NhaCungCap
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,38 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grid_kho = new DevExpress.XtraGrid.GridControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_kho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // grid_kho
+            // gridControl1
             // 
-            this.grid_kho.Location = new System.Drawing.Point(51, 85);
-            this.grid_kho.MainView = this.gridView1;
-            this.grid_kho.Name = "grid_kho";
-            this.grid_kho.Size = new System.Drawing.Size(767, 200);
-            this.grid_kho.TabIndex = 0;
-            this.grid_kho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl1.Location = new System.Drawing.Point(29, 51);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(593, 200);
+            this.gridControl1.TabIndex = 1;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Load += new System.EventHandler(this.gridControl1_Load);
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.grid_kho;
+            this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // Kho
+            // NhaCungCap
             // 
-            this.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grid_kho);
-            this.Name = "Kho";
-            this.Size = new System.Drawing.Size(853, 362);
-            this.Load += new System.EventHandler(this.Kho_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grid_kho)).EndInit();
+            this.Controls.Add(this.gridControl1);
+            this.Name = "NhaCungCap";
+            this.Size = new System.Drawing.Size(650, 302);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -67,8 +65,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl grid_kho;
+        private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-
     }
 }

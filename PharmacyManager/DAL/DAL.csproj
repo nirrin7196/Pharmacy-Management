@@ -40,7 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConnect.cs" />
+    <Compile Include="DAL_DonBan.cs" />
+    <Compile Include="DAL_DonNhap.cs" />
+    <Compile Include="DAL_DuocSy.cs" />
+    <Compile Include="DAL_Kho.cs" />
     <Compile Include="DAL_LOHANGNHAPKHO.cs" />
+    <Compile Include="DAL_NhaCungCap.cs" />
+    <Compile Include="DAL_TaiKhoan.cs" />
     <Compile Include="DAL_THUOC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

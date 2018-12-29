@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DevExpress.Utils;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace PharmacyManager.UserControlMain
 {
     public partial class DonBanThuoc : UserControl
     {
-        BUS_THUOC tv = new BUS_THUOC();
-
-        DataTable dtThuocDaChon;
+        BUS_THUOC thuoc = new BUS_THUOC();
+        BUS_DuocSy ds = new BUS_DuocSy();
+        BUS_Kho kho = new BUS_Kho();
+        BUS_DonBan db = new BUS_DonBan();
+        private List<Thuoc> th = new List<Thuoc>();
         public DonBanThuoc()
         {
             InitializeComponent();
@@ -27,104 +27,239 @@ namespace PharmacyManager.UserControlMain
 
         private void DonBanThuoc_Load(object sender, EventArgs e)
         {
-            loadDataTable();
-            sidePanel1.Width = this.Width / 2;
-            //Đổ dữ liệu vào gridControl
-            BindingSource bs = new BindingSource();
-            tv.Get_THUOC();
-            bs.DataSource = tv.Get_THUOC().Tables["THUOC"];
-            gridControlDanhSach.DataSource = bs;
+            this.ActiveControl = txt_mathuoc;
+            
         }
-
-        private void loadDataTable()
+        int a = 0;
+        private void btn_nhapthuoc_Click(object sender, EventArgs e,int _slThuoc=1)
         {
-            dtThuocDaChon = new DataTable();
-            dtThuocDaChon.Clear();
-            dtThuocDaChon.Columns.Add("Mã Thuốc");
-            dtThuocDaChon.Columns.Add("Tên Thuốc");
-            dtThuocDaChon.Columns.Add("Hoạt Chất");
-            dtThuocDaChon.Columns.Add("Giá Bán");
-            dtThuocDaChon.Columns.Add("Hạn Sử Dụng");
-            dtThuocDaChon.Columns.Add("Số Lượng");
-        }
-
-        private void caculateBill()
-        {
-            int phidichvu=0;
-            int tienthue=0;
-            int tongcong=0;
-            for (int i = 0; i < gridView1.DataRowCount; i++)
+            int sl=0;
+            if (a == 0)
             {
-                phidichvu += Convert.ToInt32(gridView1.GetRowCellValue(i, "Giá Bán"));
-                tienthue += Convert.ToInt32(gridView1.GetRowCellValue(i, "GiaSauThue"));
-                tongcong += Convert.ToInt32(gridView1.GetRowCellValue(i, "GiaBan"));
-
+                foreach (Thuoc A in th)
+                {
+                    if (string.Equals(txt_mathuoc.Text, A.getMaSanPham()))
+                    {
+                        sl += A.getsl();
+                    }
+                }
             }
-            this.txtPhiDichVu.EditValue = phidichvu.ToString();
-            this.txtTienThue.EditValue = tienthue.ToString();
-            this.txtTongCong.EditValue = tongcong.ToString();
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            handleBtnThem();
-            caculateBill();
-        }
-
-        private void handleBtnThem()
-        {
-            try
+            if (kho.Check_Exist(txt_mathuoc.Text) > sl)
             {
-                DataRowView selectedRow = (DataRowView)gridView2.GetRow(gridView2.FocusedRowHandle);
-                string maThuoc = selectedRow.Row.ItemArray[0].ToString();
-                string tenThuoc = selectedRow.Row.ItemArray[1].ToString();
-                string hoatChat = selectedRow.Row.ItemArray[2].ToString();
-                int giaBan = Int32.Parse(selectedRow.Row.ItemArray[5].ToString());
-                int hanSuDung = Int32.Parse(selectedRow.Row.ItemArray[6].ToString());
-                DataRow destRow = dtThuocDaChon.NewRow();
-                destRow[0] = maThuoc;
-                destRow[1] = tenThuoc;
-                destRow[2] = hoatChat;
-                destRow[3] = giaBan;
-                destRow[4] = hanSuDung;
-                destRow[5] = 1;
-                dtThuocDaChon.Rows.Add(destRow);
-                gridControl.DataSource = dtThuocDaChon;
+                a = 0;
+                int t = int.Parse(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["Vien"].ToString());
+
+                Thuoc X = new Thuoc(t);
+                X.setSTT(th.Count() + 1);
+                X.setMaSanPham(txt_mathuoc.Text);
+                X.setTenThuoc(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["TenThuoc"].ToString());
+                X.setGiaSauThue(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["GiaBan"].ToString());
+                string hsd = kho.Get_GiaTriThuocTrongKho(txt_mathuoc.Text).Rows[0]["NgayHetHan"].ToString();
+                string[] tokens = hsd.Split(' ');
+                hsd = tokens[0];
+               
+                X.Location = new System.Drawing.Point(0, X._stt * 30);
+                X.ButtonClick += new EventHandler(this.thuoc_ButtonClick);
+                X.ButtonClick_more += new EventHandler(this.thuoc_ButtonClick_more);
+                
+                int tt;
+                foreach (Thuoc A in th)
+                {
+                    A.getsl();
+                    if (A.getMaSanPham() == txt_mathuoc.Text)
+                    {
+                        A.setsl();
+                        tt = tongtien(th);
+                        alltien.Text = tt.ToString();
+                        return;
+                    }
+                }
+                th.Add(X);
+                panel1.Controls.Add(X);
+
+                
+                tt = tongtien(th);
+                alltien.Text = tt.ToString();
+                setlist(th);
+                X.setNTN(hsd);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Chưa Chọn Thuốc");
-            }
 
-        }
+                int t = int.Parse(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["Vien"].ToString());
+                a = 1;
+                Thuoc X = new Thuoc(t);
+                X.setSTT(th.Count() + 1);
+                X.setMaSanPham(txt_mathuoc.Text);
+                X.setTenThuoc(kho.Add_ThemLoaiThuocKhac(txt_mathuoc.Text).Rows[0]["TenThuoc"].ToString());
+                X.setGiaSauThue(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["GiaBan"].ToString());
+                string hsd = kho.Add_ThemLoaiThuocKhac(txt_mathuoc.Text).Rows[0]["NgayHetHan"].ToString();
+                string[] tokens = hsd.Split(' ');
+                hsd = tokens[0];
 
-        private void sidePanel4_Click(object sender, EventArgs e)
-        {
+                X.Location = new System.Drawing.Point(0, X._stt * 30);
+                X.ButtonClick += new EventHandler(this.thuoc_ButtonClick);
+                X.ButtonClick_more += new EventHandler(this.thuoc_ButtonClick_more);
+                int tt;
+                foreach (Thuoc A in th)
+                {
+                    A.getsl();
+                    if (A.getMaSanPham() == txt_mathuoc.Text && string.Equals(A.getNTN(),hsd))
+                    {
+                        A.setsl();
+                        tt = tongtien(th);
+                        alltien.Text = tt.ToString();
+                        return;
+                    }
+                }
+                th.Add(X);
 
-        }
-
-        private void btnBot_Click(object sender, EventArgs e)
-        {
-            try
-            {
-            dtThuocDaChon.Rows.RemoveAt(gridView1.GetSelectedRows()[0]);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Chọn loại thuốc cần xóa khỏi danh sách","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
-        }
-
-        private void gridView2_DoubleClick(object sender, EventArgs e)
-        {
-            DXMouseEventArgs ea = e as DXMouseEventArgs;
-            GridView view = sender as GridView;
-            GridHitInfo info = view.CalcHitInfo(ea.Location);
-            if (info.InRow || info.InRowCell)
-            {
-                handleBtnThem();
+                panel1.Controls.Add(X);
+                tt = tongtien(th);
+                alltien.Text = tt.ToString();
+                setlist(th);
+                X.setsl(_slThuoc);
+                X.setNTN(hsd);
             }
         }
+        void NhapThuoc()
+        {
+
+        }
+        int tongtien(List<Thuoc> th)
+        {
+            int all = 0;
+            for (int i = 0; i < th.Count; i++)
+            {
+                all += th[i].getTien();
+            }
+            return all;
+        }
+        void setlist(List<Thuoc> th)
+        {
+            if (th.Count == 0)
+                return;
+
+            for (int i = 0; i < th.Count; i++)
+            {
+                th[i]._stt = i + 1;
+                th[i].setSTT(i + 1);
+                th[i].Location = new System.Drawing.Point(0, (i + 1) * 30);
+            }
+        }
+        private void thuoc_ButtonClick(object sender, EventArgs e)
+        {
+            th.RemoveAll(r => r.gt == 1);
+            panel1.Controls.Clear();
+            setlist(th);
+            foreach (Thuoc x in th)
+            {
+                panel1.Controls.Add(x);
+            }
+
+        }
+
+        private void thuoc_ButtonClick_more(object sender, EventArgs e)
+        {
+            //try{
+                foreach (Thuoc x in th)
+                {
+                    int sl = 0;
+                    foreach (Thuoc A in th)
+                    {
+                        if (string.Equals(x.getMaSanPham(), A.getMaSanPham()) && string.Equals(x.getNTN(), A.getNTN()))
+                        {
+                            sl += A.getsl();
+                        }
+                    }
+                    if ((kho.Check_Exist(x.getMaSanPham()) < sl) /*&& a == 0*/)
+                    {
+                        x.offbuttonmore();
+                        x.setsl(kho.Check_Exist(x.getMaSanPham()));
+                        txt_mathuoc.Text = x.getMaSanPham();
+                        int k = sl - kho.Check_Exist(x.getMaSanPham());
+                        btn_nhapthuoc_Click(null, null,k);
+                    }
+                    int tt = tongtien(th);
+                    alltien.Text = tt.ToString();
+                    string MaThuoc = x.getMaSanPham();
+                    int t = int.Parse(thuoc.Get_GiaTriThuoc(MaThuoc).Rows[0]["Vien"].ToString());
+                    if (t == 1)
+                    {
+                        int LoaiSl = x.GetLoaiSL();
+                        if (LoaiSl == 0)
+                            x.setGiaSauThue(thuoc.Get_GiaTriThuoc(MaThuoc).Rows[0]["GiaVien"].ToString());
+                        else if (LoaiSl == 1)
+                            x.setGiaSauThue(thuoc.Get_GiaTriThuoc(MaThuoc).Rows[0]["GiaVi"].ToString());
+                        else if (LoaiSl == 2)
+                            x.setGiaSauThue(thuoc.Get_GiaTriThuoc(MaThuoc).Rows[0]["GiaBan"].ToString());
+                    }
+                    else
+                    {
+                        int LoaiSl = x.GetLoaiSL();
+                        if (LoaiSl == 0)
+                            x.setGiaSauThue(thuoc.Get_GiaTriThuoc(MaThuoc).Rows[0]["GiaGoi"].ToString());
+                        else if (LoaiSl == 1)
+                            x.setGiaSauThue(thuoc.Get_GiaTriThuoc(MaThuoc).Rows[0]["GiaBan"].ToString());
+                    }
+                    x.updateTongTien();
+                }
+            //}
+            //catch
+            //{
+
+            //}
+        }
+
+        private void txt_mathuoc_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txt_mathuoc.Text != "")
+            {
+                btn_nhapthuoc_Click(null, null);
+                txt_mathuoc.Text = "";
+            }
+        }
+
+        private void btn_BanThuoc_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            string Ma = db.Get_TaoMaDonBan();
+
+            string ngaythang = now.Month.ToString() + '/' + now.Day.ToString() + '/' + now.Year.ToString();
+            int GiaTien = int.Parse(alltien.Text);
+            db.TaoDonBan(Ma, 1, ngaythang, "MDS002",GiaTien);
+            foreach (Thuoc A in th)
+            {
+                string ma_thuoc = A.getMaSanPham();
+                int sl = A.getsl();
+                int SL_Loai = 1;
+                int t = int.Parse(thuoc.Get_GiaTriThuoc(ma_thuoc).Rows[0]["Vien"].ToString());
+                if (t == 1)
+                {
+                    int LoaiSl = A.GetLoaiSL();
+                    if (LoaiSl == 0)
+                        SL_Loai = int.Parse(thuoc.Get_GiaTriThuoc(ma_thuoc).Rows[0]["Vien"].ToString());
+                    else if (LoaiSl == 1)
+                        SL_Loai = int.Parse(thuoc.Get_GiaTriThuoc(ma_thuoc).Rows[0]["Vi"].ToString());
+                    else if (LoaiSl == 2)
+                        SL_Loai = int.Parse(thuoc.Get_GiaTriThuoc(ma_thuoc).Rows[0]["Hop"].ToString());
+                }
+                else
+                {
+                    int LoaiSl = A.GetLoaiSL();
+                    if (LoaiSl == 0)
+                        SL_Loai = int.Parse(thuoc.Get_GiaTriThuoc(ma_thuoc).Rows[0]["Goi"].ToString());
+                    else if (LoaiSl == 1)
+                        SL_Loai = int.Parse(thuoc.Get_GiaTriThuoc(ma_thuoc).Rows[0]["Hop"].ToString());
+                }
+                sl = sl * SL_Loai;
+                //string Loaisl = A.GetLoaiSL().ToString();
+                string ntn = A.getNTN();
+                int Gia=A.getTien();
+                db.CTDB(ma_thuoc, Ma, sl.ToString(), ntn, 1,Gia);
+            }
+        }
+
+        
     }
 }

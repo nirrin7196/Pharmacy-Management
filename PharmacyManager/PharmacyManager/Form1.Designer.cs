@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDonBanThuoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnDanhSachDon = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_BaoCaoBanHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhapKho = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuatKho = new DevExpress.XtraBars.BarButtonItem();
             this.btnTonKho = new DevExpress.XtraBars.BarButtonItem();
@@ -50,6 +51,14 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.lbl_ten = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemFontEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemFontEdit();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.lbl_name = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.homeTab = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,6 +68,7 @@
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +79,7 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.btnDonBanThuoc,
             this.btnDanhSachDon,
-            this.barButtonItem1,
+            this.btn_BaoCaoBanHang,
             this.btnNhapKho,
             this.btnXuatKho,
             this.btnTonKho,
@@ -86,15 +96,27 @@
             this.barButtonItem2,
             this.barButtonItem3,
             this.btnDoiMatKhau,
-            this.btnThoat});
+            this.btnThoat,
+            this.lbl_ten,
+            this.barStaticItem1,
+            this.barEditItem1,
+            this.barStaticItem2,
+            this.lbl_name,
+            this.barButtonItem4,
+            this.barButtonItem5});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 21;
+            this.ribbonControl1.MaxItemId = 29;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem4);
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.lbl_name);
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem5);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.homeTab});
+            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemFontEdit1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1376, 196);
+            this.ribbonControl1.Size = new System.Drawing.Size(1376, 157);
             // 
             // btnDonBanThuoc
             // 
@@ -112,19 +134,20 @@
             this.btnDanhSachDon.Name = "btnDanhSachDon";
             this.btnDanhSachDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhSachDon_ItemClick);
             // 
-            // barButtonItem1
+            // btn_BaoCaoBanHang
             // 
-            this.barButtonItem1.Caption = "Báo cáo bán hàng";
-            this.barButtonItem1.Id = 3;
-            this.barButtonItem1.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_bao_cao_ban_hang;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.btn_BaoCaoBanHang.Caption = "Báo cáo bán hàng";
+            this.btn_BaoCaoBanHang.Id = 3;
+            this.btn_BaoCaoBanHang.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_bao_cao_ban_hang;
+            this.btn_BaoCaoBanHang.Name = "btn_BaoCaoBanHang";
+            this.btn_BaoCaoBanHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BaoCaoBanHang_ItemClick);
             // 
             // btnNhapKho
             // 
             this.btnNhapKho.Caption = "Nhập kho";
             this.btnNhapKho.Id = 4;
             this.btnNhapKho.Name = "btnNhapKho";
+            this.btnNhapKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapKho_ItemClick);
             // 
             // btnXuatKho
             // 
@@ -167,6 +190,7 @@
             this.btnInTemBarCode.Id = 10;
             this.btnInTemBarCode.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_tem_barcode;
             this.btnInTemBarCode.Name = "btnInTemBarCode";
+            this.btnInTemBarCode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInTemBarCode_ItemClick);
             // 
             // btnDanhMucHang
             // 
@@ -174,6 +198,7 @@
             this.btnDanhMucHang.Id = 11;
             this.btnDanhMucHang.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_danh_muc_hang;
             this.btnDanhMucHang.Name = "btnDanhMucHang";
+            this.btnDanhMucHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhMucHang_ItemClick);
             // 
             // btnBangGia
             // 
@@ -181,6 +206,7 @@
             this.btnBangGia.Id = 12;
             this.btnBangGia.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_bang_gia;
             this.btnBangGia.Name = "btnBangGia";
+            this.btnBangGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangGia_ItemClick);
             // 
             // btnDanhMucNhaCungCap
             // 
@@ -188,6 +214,7 @@
             this.btnDanhMucNhaCungCap.Id = 13;
             this.btnDanhMucNhaCungCap.ImageOptions.LargeImage = global::PharmacyManager.Properties.Resources.ic_danh_muc_nha_cc;
             this.btnDanhMucNhaCungCap.Name = "btnDanhMucNhaCungCap";
+            this.btnDanhMucNhaCungCap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhMucNhaCungCap_ItemClick);
             // 
             // btnHuyDonHang
             // 
@@ -236,6 +263,60 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
+            // lbl_ten
+            // 
+            this.lbl_ten.Caption = "barStaticItem1";
+            this.lbl_ten.Id = 22;
+            this.lbl_ten.Name = "lbl_ten";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "barStaticItem1";
+            this.barStaticItem1.Id = 23;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.repositoryItemFontEdit1;
+            this.barEditItem1.Id = 24;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemFontEdit1
+            // 
+            this.repositoryItemFontEdit1.AutoHeight = false;
+            this.repositoryItemFontEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemFontEdit1.Name = "repositoryItemFontEdit1";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "barStaticItem2";
+            this.barStaticItem2.Id = 25;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.Caption = "barStaticItem3";
+            this.lbl_name.Id = 26;
+            this.lbl_name.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lbl_name.ImageOptions.Image")));
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.Caption;
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 27;
+            this.barButtonItem4.ImageOptions.Image = global::PharmacyManager.Properties.Resources.ic_doi_mat_khau;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "barButtonItem5";
+            this.barButtonItem5.Id = 28;
+            this.barButtonItem5.ImageOptions.Image = global::PharmacyManager.Properties.Resources.close;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
             // homeTab
             // 
             this.homeTab.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -251,7 +332,7 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDonBanThuoc);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDanhSachDon);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_BaoCaoBanHang);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Bán Hàng";
             // 
@@ -262,7 +343,6 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTonKho);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnKiemKeLo);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnKiemKeSoLuong);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnNhapTonDauKi);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Thủ Kho";
             // 
@@ -303,11 +383,11 @@
             this.xtraTabControlMain.CustomHeaderButtons.AddRange(new DevExpress.XtraTab.Buttons.CustomHeaderButton[] {
             new DevExpress.XtraTab.Buttons.CustomHeaderButton()});
             this.xtraTabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 196);
+            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 157);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
             this.xtraTabControlMain.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Far;
             this.xtraTabControlMain.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabControlMain.Size = new System.Drawing.Size(1376, 587);
+            this.xtraTabControlMain.Size = new System.Drawing.Size(1376, 626);
             this.xtraTabControlMain.TabIndex = 5;
             this.xtraTabControlMain.CloseButtonClick += new System.EventHandler(this.xtraTabControlMain_CloseButtonClick);
             // 
@@ -315,7 +395,7 @@
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1376, 783);
             this.Controls.Add(this.xtraTabControlMain);
@@ -324,10 +404,11 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
-            this.Text = "Quản Lý Nhà Thuốc Tây";
+            this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -341,7 +422,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnDonBanThuoc;
         private DevExpress.XtraBars.BarButtonItem btnDanhSachDon;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btn_BaoCaoBanHang;
         private DevExpress.XtraBars.BarButtonItem btnNhapKho;
         private DevExpress.XtraBars.BarButtonItem btnXuatKho;
         private DevExpress.XtraBars.BarButtonItem btnTonKho;
@@ -365,6 +446,14 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControlMain;
+        private DevExpress.XtraBars.BarStaticItem lbl_ten;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemFontEdit repositoryItemFontEdit1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarStaticItem lbl_name;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
     }
 }
 

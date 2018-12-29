@@ -16,6 +16,8 @@ namespace PharmacyManager.UserControlMain
     public partial class Kho : DevExpress.XtraEditors.XtraUserControl
     {
         BUS_THUOC tv = new BUS_THUOC();
+        BUS_DonNhap dn = new BUS_DonNhap();
+        BUS_Kho kho = new BUS_Kho(); 
         public Kho()
         {
             InitializeComponent();
@@ -24,8 +26,8 @@ namespace PharmacyManager.UserControlMain
         private void Kho_Load(object sender, EventArgs e)
         {
             BindingSource bs = new BindingSource();
-            tv.Get_THUOC();
-            bs.DataSource = tv.Get_THUOC().Tables["THUOC"];
+            
+            bs.DataSource = kho.Get_Kho().Tables["KhoHang"];
             grid_kho.DataSource = bs;
         }
     }

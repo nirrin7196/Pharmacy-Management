@@ -28,337 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DonBanThuoc));
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
-            this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
-            this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
-            this.txtTongCong = new DevExpress.XtraEditors.TextEdit();
-            this.lblTongCong = new DevExpress.XtraEditors.LabelControl();
-            this.txtTienThue = new DevExpress.XtraEditors.TextEdit();
-            this.txtPhiDichVu = new DevExpress.XtraEditors.TextEdit();
-            this.lblTienThue = new DevExpress.XtraEditors.LabelControl();
-            this.lblPhiDichVu = new DevExpress.XtraEditors.LabelControl();
-            this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
-            this.btnInHoaDon = new DevExpress.XtraEditors.SimpleButton();
-            this.btnThanhToan = new DevExpress.XtraEditors.SimpleButton();
-            this.btnBot = new DevExpress.XtraEditors.SimpleButton();
-            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
-            this.sidePanel3 = new DevExpress.XtraEditors.SidePanel();
-            this.gridControlDanhSach = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.sidePanel1.SuspendLayout();
-            this.sidePanel5.SuspendLayout();
-            this.sidePanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTongCong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTienThue.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhiDichVu.Properties)).BeginInit();
-            this.sidePanel2.SuspendLayout();
-            this.sidePanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlDanhSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.btn_XuatHoaDon = new System.Windows.Forms.Button();
+            this.txt_ttduocsy = new System.Windows.Forms.TextBox();
+            this.cbb_DuocSy = new System.Windows.Forms.ComboBox();
+            this.alltien = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txt_giatien = new System.Windows.Forms.TextBox();
+            this.btn_test = new System.Windows.Forms.Button();
+            this.tenthuoc = new System.Windows.Forms.TextBox();
+            this.txt_mathuoc = new System.Windows.Forms.TextBox();
+            this.btn_BanThuoc = new System.Windows.Forms.Button();
+            this.btn_nhapthuoc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // gridControl
+            // btn_XuatHoaDon
             // 
-            this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.Location = new System.Drawing.Point(0, 0);
-            this.gridControl.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.gridControl.MainView = this.gridView1;
-            this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(590, 453);
-            this.gridControl.TabIndex = 0;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.btn_XuatHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_XuatHoaDon.Location = new System.Drawing.Point(807, 382);
+            this.btn_XuatHoaDon.Name = "btn_XuatHoaDon";
+            this.btn_XuatHoaDon.Size = new System.Drawing.Size(143, 45);
+            this.btn_XuatHoaDon.TabIndex = 25;
+            this.btn_XuatHoaDon.Text = "Xuat Hoa Don";
+            this.btn_XuatHoaDon.UseVisualStyleBackColor = true;
             // 
-            // gridView1
+            // txt_ttduocsy
             // 
-            this.gridView1.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.White;
-            this.gridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.gridView1.Appearance.Empty.BackColor = System.Drawing.Color.Transparent;
-            this.gridView1.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView1.Appearance.FooterPanel.BackColor = System.Drawing.Color.Transparent;
-            this.gridView1.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.gridView1.GridControl = this.gridControl;
-            this.gridView1.Name = "gridView1";
+            this.txt_ttduocsy.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ttduocsy.Location = new System.Drawing.Point(181, 77);
+            this.txt_ttduocsy.Name = "txt_ttduocsy";
+            this.txt_ttduocsy.Size = new System.Drawing.Size(684, 23);
+            this.txt_ttduocsy.TabIndex = 24;
             // 
-            // sidePanel1
+            // cbb_DuocSy
             // 
-            this.sidePanel1.Controls.Add(this.sidePanel5);
-            this.sidePanel1.Controls.Add(this.sidePanel4);
-            this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidePanel1.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(591, 656);
-            this.sidePanel1.TabIndex = 1;
-            this.sidePanel1.Text = "sidePanel1";
+            this.cbb_DuocSy.FormattingEnabled = true;
+            this.cbb_DuocSy.Location = new System.Drawing.Point(3, 77);
+            this.cbb_DuocSy.Name = "cbb_DuocSy";
+            this.cbb_DuocSy.Size = new System.Drawing.Size(121, 21);
+            this.cbb_DuocSy.TabIndex = 23;
             // 
-            // sidePanel5
+            // alltien
             // 
-            this.sidePanel5.Controls.Add(this.gridControl);
-            this.sidePanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidePanel5.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel5.Name = "sidePanel5";
-            this.sidePanel5.Size = new System.Drawing.Size(590, 453);
-            this.sidePanel5.TabIndex = 2;
-            this.sidePanel5.Text = "sidePanel5";
+            this.alltien.Location = new System.Drawing.Point(860, 336);
+            this.alltien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.alltien.Name = "alltien";
+            this.alltien.Size = new System.Drawing.Size(113, 20);
+            this.alltien.TabIndex = 22;
             // 
-            // sidePanel4
+            // panel1
             // 
-            this.sidePanel4.Controls.Add(this.txtTongCong);
-            this.sidePanel4.Controls.Add(this.lblTongCong);
-            this.sidePanel4.Controls.Add(this.txtTienThue);
-            this.sidePanel4.Controls.Add(this.txtPhiDichVu);
-            this.sidePanel4.Controls.Add(this.lblTienThue);
-            this.sidePanel4.Controls.Add(this.lblPhiDichVu);
-            this.sidePanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.sidePanel4.Location = new System.Drawing.Point(0, 453);
-            this.sidePanel4.Name = "sidePanel4";
-            this.sidePanel4.Size = new System.Drawing.Size(590, 203);
-            this.sidePanel4.TabIndex = 1;
-            this.sidePanel4.Text = "sidePanel4";
-            this.sidePanel4.Click += new System.EventHandler(this.sidePanel4_Click);
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Location = new System.Drawing.Point(3, 154);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(970, 173);
+            this.panel1.TabIndex = 21;
             // 
-            // txtTongCong
+            // txt_giatien
             // 
-            this.txtTongCong.EditValue = "0";
-            this.txtTongCong.Location = new System.Drawing.Point(191, 129);
-            this.txtTongCong.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTongCong.Name = "txtTongCong";
-            this.txtTongCong.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtTongCong.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.txtTongCong.Properties.Appearance.Options.UseBackColor = true;
-            this.txtTongCong.Properties.Appearance.Options.UseForeColor = true;
-            this.txtTongCong.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtTongCong.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtTongCong.Properties.DisplayFormat.FormatString = "n0";
-            this.txtTongCong.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtTongCong.Properties.ReadOnly = true;
-            this.txtTongCong.Size = new System.Drawing.Size(360, 22);
-            this.txtTongCong.TabIndex = 20;
+            this.txt_giatien.Location = new System.Drawing.Point(370, 121);
+            this.txt_giatien.Name = "txt_giatien";
+            this.txt_giatien.Size = new System.Drawing.Size(100, 20);
+            this.txt_giatien.TabIndex = 20;
             // 
-            // lblTongCong
+            // btn_test
             // 
-            this.lblTongCong.Appearance.BackColor = System.Drawing.Color.White;
-            this.lblTongCong.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongCong.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblTongCong.Appearance.Options.UseBackColor = true;
-            this.lblTongCong.Appearance.Options.UseFont = true;
-            this.lblTongCong.Appearance.Options.UseForeColor = true;
-            this.lblTongCong.LineColor = System.Drawing.Color.Black;
-            this.lblTongCong.Location = new System.Drawing.Point(94, 128);
-            this.lblTongCong.Margin = new System.Windows.Forms.Padding(4);
-            this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(82, 22);
-            this.lblTongCong.TabIndex = 19;
-            this.lblTongCong.Text = "Tổng cộng";
+            this.btn_test.Location = new System.Drawing.Point(136, 120);
+            this.btn_test.Name = "btn_test";
+            this.btn_test.Size = new System.Drawing.Size(75, 23);
+            this.btn_test.TabIndex = 19;
+            this.btn_test.Text = "button1";
+            this.btn_test.UseVisualStyleBackColor = true;
             // 
-            // txtTienThue
+            // tenthuoc
             // 
-            this.txtTienThue.EditValue = "0";
-            this.txtTienThue.Location = new System.Drawing.Point(191, 88);
-            this.txtTienThue.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTienThue.Name = "txtTienThue";
-            this.txtTienThue.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtTienThue.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.txtTienThue.Properties.Appearance.Options.UseBackColor = true;
-            this.txtTienThue.Properties.Appearance.Options.UseForeColor = true;
-            this.txtTienThue.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtTienThue.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtTienThue.Properties.DisplayFormat.FormatString = "n0";
-            this.txtTienThue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtTienThue.Properties.ReadOnly = true;
-            this.txtTienThue.Size = new System.Drawing.Size(360, 22);
-            this.txtTienThue.TabIndex = 18;
+            this.tenthuoc.Location = new System.Drawing.Point(244, 121);
+            this.tenthuoc.Name = "tenthuoc";
+            this.tenthuoc.Size = new System.Drawing.Size(100, 20);
+            this.tenthuoc.TabIndex = 18;
             // 
-            // txtPhiDichVu
+            // txt_mathuoc
             // 
-            this.txtPhiDichVu.EditValue = "0";
-            this.txtPhiDichVu.Location = new System.Drawing.Point(191, 53);
-            this.txtPhiDichVu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPhiDichVu.Name = "txtPhiDichVu";
-            this.txtPhiDichVu.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtPhiDichVu.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.txtPhiDichVu.Properties.Appearance.Options.UseBackColor = true;
-            this.txtPhiDichVu.Properties.Appearance.Options.UseForeColor = true;
-            this.txtPhiDichVu.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtPhiDichVu.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtPhiDichVu.Properties.DisplayFormat.FormatString = "n0";
-            this.txtPhiDichVu.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtPhiDichVu.Properties.ReadOnly = true;
-            this.txtPhiDichVu.Size = new System.Drawing.Size(360, 22);
-            this.txtPhiDichVu.TabIndex = 17;
+            this.txt_mathuoc.Location = new System.Drawing.Point(3, 121);
+            this.txt_mathuoc.Name = "txt_mathuoc";
+            this.txt_mathuoc.Size = new System.Drawing.Size(100, 20);
+            this.txt_mathuoc.TabIndex = 17;
+            this.txt_mathuoc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_mathuoc_KeyUp);
             // 
-            // lblTienThue
+            // btn_BanThuoc
             // 
-            this.lblTienThue.Appearance.BackColor = System.Drawing.Color.White;
-            this.lblTienThue.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTienThue.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblTienThue.Appearance.Options.UseBackColor = true;
-            this.lblTienThue.Appearance.Options.UseFont = true;
-            this.lblTienThue.Appearance.Options.UseForeColor = true;
-            this.lblTienThue.LineColor = System.Drawing.Color.Black;
-            this.lblTienThue.Location = new System.Drawing.Point(94, 92);
-            this.lblTienThue.Margin = new System.Windows.Forms.Padding(4);
-            this.lblTienThue.Name = "lblTienThue";
-            this.lblTienThue.Size = new System.Drawing.Size(72, 22);
-            this.lblTienThue.TabIndex = 15;
-            this.lblTienThue.Text = "Tiền thuế";
+            this.btn_BanThuoc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BanThuoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_BanThuoc.Location = new System.Drawing.Point(332, 377);
+            this.btn_BanThuoc.Name = "btn_BanThuoc";
+            this.btn_BanThuoc.Size = new System.Drawing.Size(202, 50);
+            this.btn_BanThuoc.TabIndex = 16;
+            this.btn_BanThuoc.Text = "Bán Thuốc";
+            this.btn_BanThuoc.UseVisualStyleBackColor = true;
+            this.btn_BanThuoc.Click += new System.EventHandler(this.btn_BanThuoc_Click);
             // 
-            // lblPhiDichVu
+            // btn_nhapthuoc
             // 
-            this.lblPhiDichVu.Appearance.BackColor = System.Drawing.Color.White;
-            this.lblPhiDichVu.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhiDichVu.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblPhiDichVu.Appearance.Options.UseBackColor = true;
-            this.lblPhiDichVu.Appearance.Options.UseFont = true;
-            this.lblPhiDichVu.Appearance.Options.UseForeColor = true;
-            this.lblPhiDichVu.LineColor = System.Drawing.Color.Black;
-            this.lblPhiDichVu.Location = new System.Drawing.Point(94, 52);
-            this.lblPhiDichVu.LookAndFeel.SkinMaskColor = System.Drawing.Color.Black;
-            this.lblPhiDichVu.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
-            this.lblPhiDichVu.Margin = new System.Windows.Forms.Padding(4);
-            this.lblPhiDichVu.Name = "lblPhiDichVu";
-            this.lblPhiDichVu.Size = new System.Drawing.Size(89, 22);
-            this.lblPhiDichVu.TabIndex = 16;
-            this.lblPhiDichVu.Text = "Phí dịch vụ";
-            // 
-            // sidePanel2
-            // 
-            this.sidePanel2.Controls.Add(this.btnInHoaDon);
-            this.sidePanel2.Controls.Add(this.btnThanhToan);
-            this.sidePanel2.Controls.Add(this.btnBot);
-            this.sidePanel2.Controls.Add(this.btnThem);
-            this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidePanel2.Location = new System.Drawing.Point(591, 0);
-            this.sidePanel2.Name = "sidePanel2";
-            this.sidePanel2.Size = new System.Drawing.Size(132, 656);
-            this.sidePanel2.TabIndex = 2;
-            this.sidePanel2.Text = "sidePanel2";
-            // 
-            // btnInHoaDon
-            // 
-            this.btnInHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.ImageOptions.Image")));
-            this.btnInHoaDon.Location = new System.Drawing.Point(0, 453);
-            this.btnInHoaDon.Name = "btnInHoaDon";
-            this.btnInHoaDon.Size = new System.Drawing.Size(132, 70);
-            this.btnInHoaDon.TabIndex = 2;
-            this.btnInHoaDon.Text = "In hóa đơn";
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.Image")));
-            this.btnThanhToan.Location = new System.Drawing.Point(0, 359);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(132, 52);
-            this.btnThanhToan.TabIndex = 2;
-            this.btnThanhToan.Text = "Thanh Toán";
-            // 
-            // btnBot
-            // 
-            this.btnBot.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBot.ImageOptions.Image")));
-            this.btnBot.Location = new System.Drawing.Point(0, 228);
-            this.btnBot.Name = "btnBot";
-            this.btnBot.Size = new System.Drawing.Size(132, 54);
-            this.btnBot.TabIndex = 1;
-            this.btnBot.Text = "Bớt";
-            this.btnBot.Click += new System.EventHandler(this.btnBot_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.Location = new System.Drawing.Point(0, 94);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(132, 53);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // sidePanel3
-            // 
-            this.sidePanel3.Controls.Add(this.gridControlDanhSach);
-            this.sidePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidePanel3.Location = new System.Drawing.Point(723, 0);
-            this.sidePanel3.Name = "sidePanel3";
-            this.sidePanel3.Size = new System.Drawing.Size(359, 656);
-            this.sidePanel3.TabIndex = 3;
-            this.sidePanel3.Text = "sidePanel3";
-            // 
-            // gridControlDanhSach
-            // 
-            this.gridControlDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDanhSach.Location = new System.Drawing.Point(0, 0);
-            this.gridControlDanhSach.MainView = this.gridView2;
-            this.gridControlDanhSach.Name = "gridControlDanhSach";
-            this.gridControlDanhSach.Size = new System.Drawing.Size(359, 656);
-            this.gridControlDanhSach.TabIndex = 0;
-            this.gridControlDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControlDanhSach;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsFind.AlwaysVisible = true;
-            this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
+            this.btn_nhapthuoc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_nhapthuoc.ForeColor = System.Drawing.Color.Black;
+            this.btn_nhapthuoc.Location = new System.Drawing.Point(56, 377);
+            this.btn_nhapthuoc.Name = "btn_nhapthuoc";
+            this.btn_nhapthuoc.Size = new System.Drawing.Size(202, 50);
+            this.btn_nhapthuoc.TabIndex = 15;
+            this.btn_nhapthuoc.Text = "NHẬP THUỐC";
+            this.btn_nhapthuoc.UseVisualStyleBackColor = true;
+            //this.btn_nhapthuoc.Click += new System.EventHandler(this.btn_nhapthuoc_Click);
             // 
             // DonBanThuoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.sidePanel3);
-            this.Controls.Add(this.sidePanel2);
-            this.Controls.Add(this.sidePanel1);
+            this.Controls.Add(this.btn_XuatHoaDon);
+            this.Controls.Add(this.txt_ttduocsy);
+            this.Controls.Add(this.cbb_DuocSy);
+            this.Controls.Add(this.alltien);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txt_giatien);
+            this.Controls.Add(this.btn_test);
+            this.Controls.Add(this.tenthuoc);
+            this.Controls.Add(this.txt_mathuoc);
+            this.Controls.Add(this.btn_BanThuoc);
+            this.Controls.Add(this.btn_nhapthuoc);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DonBanThuoc";
-            this.Size = new System.Drawing.Size(1082, 656);
+            this.Size = new System.Drawing.Size(1015, 533);
             this.Load += new System.EventHandler(this.DonBanThuoc_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.sidePanel1.ResumeLayout(false);
-            this.sidePanel5.ResumeLayout(false);
-            this.sidePanel4.ResumeLayout(false);
-            this.sidePanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTongCong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTienThue.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhiDichVu.Properties)).EndInit();
-            this.sidePanel2.ResumeLayout(false);
-            this.sidePanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlDanhSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SidePanel sidePanel1;
-        private DevExpress.XtraEditors.SidePanel sidePanel2;
-        private DevExpress.XtraEditors.SimpleButton btnInHoaDon;
-        private DevExpress.XtraEditors.SimpleButton btnThanhToan;
-        private DevExpress.XtraEditors.SimpleButton btnBot;
-        private DevExpress.XtraEditors.SimpleButton btnThem;
-        private DevExpress.XtraEditors.SidePanel sidePanel3;
-        private DevExpress.XtraGrid.GridControl gridControlDanhSach;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraEditors.SidePanel sidePanel4;
-        private DevExpress.XtraEditors.TextEdit txtTongCong;
-        private DevExpress.XtraEditors.LabelControl lblTongCong;
-        private DevExpress.XtraEditors.TextEdit txtTienThue;
-        private DevExpress.XtraEditors.TextEdit txtPhiDichVu;
-        private DevExpress.XtraEditors.LabelControl lblTienThue;
-        private DevExpress.XtraEditors.LabelControl lblPhiDichVu;
-        private DevExpress.XtraEditors.SidePanel sidePanel5;
+        private System.Windows.Forms.Button btn_XuatHoaDon;
+        private System.Windows.Forms.TextBox txt_ttduocsy;
+        private System.Windows.Forms.ComboBox cbb_DuocSy;
+        private System.Windows.Forms.TextBox alltien;
+        private System.Windows.Forms.FlowLayoutPanel panel1;
+        private System.Windows.Forms.TextBox txt_giatien;
+        private System.Windows.Forms.Button btn_test;
+        private System.Windows.Forms.TextBox tenthuoc;
+        private System.Windows.Forms.TextBox txt_mathuoc;
+        private System.Windows.Forms.Button btn_BanThuoc;
+        private System.Windows.Forms.Button btn_nhapthuoc;
+
     }
 }
