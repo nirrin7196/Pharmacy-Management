@@ -22,6 +22,7 @@ namespace PharmacyManager.UserControlMain
 
         private void ThemThuocMoi_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
             for(int i=1;i<21;i++)
             {
                 cbb_SoLuongVienMoiVi.Items.Add(i);
@@ -153,9 +154,29 @@ namespace PharmacyManager.UserControlMain
                 GiaVi = 0;
             }
             string ThoiHanSuDung = NamSuDung.ToString() + "." + thangSuDung.ToString();
-            t.NhapThuocMoi(MaThuoc, TenThuoc, HoatChat, GiaNhap, GiaSauThue, GiaBan, ThoiHanSuDung, Hop, Vi, GiaVi, Goi, GiaGoi, Vien, GiaVien);
+            try
+            {
+                bool check = t.NhapThuocMoi(MaThuoc, TenThuoc, HoatChat, GiaNhap, GiaSauThue, GiaBan, ThoiHanSuDung, Hop, Vi, GiaVi, Goi, GiaGoi, Vien, GiaVien);
+                if(check)
+                {
+                    MessageBox.Show("Thêm thuốc thành công", "Thông báo",MessageBoxButtons.OK , MessageBoxIcon.Information);
+                    this.ParentForm.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi thêm thuốc");
+                }
+            } catch(Exception ex)
+            {
+
+            }
 
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
         }
     }
 }

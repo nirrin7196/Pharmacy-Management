@@ -25,7 +25,7 @@ namespace PharmacyManager.UserControlMain
             //t.Get_BangGia();
             //bs.DataSource = t.Get_BangGia().Tables["THUOC"];
             //gridControl1.DataSource = bs;
-
+            this.Dock = DockStyle.Fill;
         }
 
         private void gridControl1_Load(object sender, EventArgs e)

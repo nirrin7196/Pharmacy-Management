@@ -35,6 +35,7 @@ namespace PharmacyManager.UserControlMain
         DateTime now = DateTime.Now;
         private void Thuoc_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Top;
             sl.Text = "1";
             sl.TextAlign = HorizontalAlignment.Center;
             int tien = 0;
@@ -108,7 +109,7 @@ namespace PharmacyManager.UserControlMain
         }
         public void setGiaNhap(string t)
         {
-            lbl_gianhap.Text = t;
+            //lbl_gianhap.Text = t;
         }
         public void setsl(int a)
         {
@@ -116,7 +117,7 @@ namespace PharmacyManager.UserControlMain
         }
         public void offbuttonmore()
         {
-            btn_more.Enabled = false;
+            btnMore.Enabled = false;
         }
         public void setsl()
         {

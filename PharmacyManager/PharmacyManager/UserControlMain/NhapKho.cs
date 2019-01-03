@@ -22,6 +22,7 @@ namespace PharmacyManager.UserControlMain
         BUS_THUOC thuoc = new BUS_THUOC();
         BUS_DuocSy ds = new BUS_DuocSy();
         BUS_DonNhap dn = new BUS_DonNhap();
+        BUS_DonBan db = new BUS_DonBan();
         public NhapKho()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace PharmacyManager.UserControlMain
             {
                 cbb_DuocSy.Items.Add(dr["MaDuocSy"].ToString() + "  -  " + dr["TenDuocSy"].ToString());
             }
+            cbb_tencty.SelectedIndex = 0;
 
         }
 
@@ -62,7 +64,13 @@ namespace PharmacyManager.UserControlMain
                 X.setMaSanPham(txt_mathuoc.Text);
                 X.setTenThuoc(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["TenThuoc"].ToString());
                 X.setGiaSauThue(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["GiaSauThue"].ToString());
-                X.setGiaNhap(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["GiaNhap"].ToString());
+                if (cbb_tencty.SelectedIndex == 0)
+                    X.setGiaNhap(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["GiaNhap"].ToString());
+                else if (cbb_tencty.SelectedIndex == 1)
+                {
+                    X.setGiaSauThue(thuoc.Get_GiaTriThuoc(txt_mathuoc.Text).Rows[0]["GiaBan"].ToString());
+                    X.setGiaNhap("");
+                }
                 X.Location = new System.Drawing.Point(0, X._stt * 30);
                 X.ButtonClick += new EventHandler(this.thuoc_ButtonClick);
                 X.ButtonClick_more += new EventHandler(this.thuoc_ButtonClick_more);
@@ -139,20 +147,38 @@ namespace PharmacyManager.UserControlMain
         private void btn_nhapkho_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
-            string Ma=dn.Get_TaoMaDonNhap();
 
             string ngaythang = now.Month.ToString() + '/' + now.Day.ToString() + '/' + now.Year.ToString();
             string[] tokens = cbb_tencty.Text.Split(' ');
             string macongty = tokens[0];
             tokens = cbb_DuocSy.Text.Split(' ');
-            string maduocsy = tokens[0];
-            dn.TaoDonNhap(Ma, ngaythang, macongty, maduocsy);
+            string maduocsy = "MDS001";
+            int gia = -1 * int.Parse(alltien.Text);
+            string Ma = "";
+            if (cbb_tencty.SelectedIndex == 0)
+                {
+                    Ma = dn.Get_TaoMaDonNhap();
+                    dn.TaoDonNhap(Ma, ngaythang, macongty, maduocsy);
+                }
+            else if (cbb_tencty.SelectedIndex == 1)
+                {
+                    Ma = db.Get_TaoMaDonBan();
+                    db.TaoDonBan(Ma, 1, ngaythang, maduocsy, gia);
+                }
             foreach (Thuoc A in th)
             {
                 string ma_thuoc = A.getMaSanPham();
                 string sl = A.getsl().ToString();
                 string ntn = A.setNTN(float.Parse(thuoc.Get_GiaTriThuoc(A.getMaSanPham()).Rows[0]["ThoiHanSuDung"].ToString()));
+                if (cbb_tencty.SelectedIndex == 0)
                 thuoc.NhapThuoc(ma_thuoc, Ma, sl, ntn);
+                else if (cbb_tencty.SelectedIndex == 1)
+                {
+                    sl = "-" + sl;
+                    ntn = A.getNTN();
+                    int Gia = A.getTien();
+                    db.CTDB(ma_thuoc, Ma, sl, ntn, 2, Gia);
+                }
             }
         }
 
@@ -226,6 +252,20 @@ namespace PharmacyManager.UserControlMain
             doc.Add(table);
 
             doc.Close();
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sidePanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void cbb_LoaiDonNhap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

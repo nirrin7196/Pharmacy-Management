@@ -27,5 +27,10 @@ namespace PharmacyManager.UserControlMain
             bs.DataSource = ncc.Get_CONGTY().Tables["CONGTY"];
             gridControl1.DataSource = bs;
         }
+
+        private void NhaCungCap_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+        }
     }
 }

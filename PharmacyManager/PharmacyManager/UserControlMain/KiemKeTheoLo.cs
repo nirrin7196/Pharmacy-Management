@@ -23,6 +23,8 @@ namespace PharmacyManager.UserControlMain
 
         private void KiemKeTheoLo_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
+            sidePanel2.Width = this.Width / 2;
             BindingSource bs = new BindingSource();
             lh.Get_LOHANGNHAPKHO();
             bs.DataSource = lh.Get_LOHANGNHAPKHO().Tables["DONNHAP,DUOCSY"];

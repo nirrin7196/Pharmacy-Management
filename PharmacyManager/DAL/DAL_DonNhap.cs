@@ -94,5 +94,51 @@ namespace DAL
                 return null;
             }
         }
+        public string Get_TenCongTy(string MaThuoc, string NgayHetHan)
+        {
+            try
+            {
+                string TenCty;
+                SqlDataAdapter da = new SqlDataAdapter();
+                string sqlstr = "";
+                sqlstr = "select cty.TenCongTy ";
+                sqlstr += "from CTDN ct, DONNHAP dn,CONGTY cty ";
+                sqlstr += "where ct.MaDonNhap=dn.MaDonNhap and cty.MaCongTy=dn.MaCongTy and ct.MaThuoc='";
+                sqlstr += MaThuoc + "' and ct.NgayHetHan='" + NgayHetHan + "'";
+                da.InsertCommand = new SqlCommand(sqlstr, _cn);
+                _cn.Open();
+                TenCty = da.InsertCommand.ExecuteScalar().ToString();
+                _cn.Close();
+                return TenCty;
+            }
+            catch
+            {
+                _cn.Close();
+                return null;
+            }
+        }
+        public string Get_SoLuong(string MaThuoc, string NgayHetHan)
+        {
+            try
+            {
+                string SoLuong;
+                SqlDataAdapter da = new SqlDataAdapter();
+                string sqlstr = "";
+                sqlstr = "select SoLuong ";
+                sqlstr += "from KhoHang ";
+                sqlstr += "where MaThuoc='";
+                sqlstr += MaThuoc + "' and NgayHetHan='" + NgayHetHan + "'";
+                da.InsertCommand = new SqlCommand(sqlstr, _cn);
+                _cn.Open();
+                SoLuong = da.InsertCommand.ExecuteScalar().ToString();
+                _cn.Close();
+                return SoLuong;
+            }
+            catch
+            {
+                _cn.Close();
+                return null;
+            }
+        }
     }
 }

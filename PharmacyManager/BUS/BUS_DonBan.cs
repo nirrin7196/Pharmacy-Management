@@ -39,5 +39,9 @@ namespace BUS
         {
             return db.CTDB(MaThuoc, MaDonBan, sl, ngayhethan, LoaiDonThuoc, Gia);
         }
-    }
+        public DataSet ThongKeTraHang()
+	    {		
+	        return db.ThongKeTraHang();		
+	    }
+}
 }

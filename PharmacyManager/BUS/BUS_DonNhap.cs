@@ -23,5 +23,13 @@ namespace BUS
         {
             return dn.Get_ThongKeKho();
         }
+        public string Get_SoLuong(string MaThuoc, string NgayHetHan)
+	    {		
+	        return dn.Get_SoLuong(MaThuoc, NgayHetHan);		
+	    }		
+	    public string Get_TenCongTy(string MaThuoc, string NgayHetHan)
+	    {		
+	        return dn.Get_TenCongTy(MaThuoc, NgayHetHan);		
+	    }
     }
 }

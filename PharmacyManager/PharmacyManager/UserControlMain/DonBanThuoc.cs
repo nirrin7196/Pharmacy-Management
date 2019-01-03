@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DevExpress.Utils;
+using System.Diagnostics;
 
 namespace PharmacyManager.UserControlMain
 {
@@ -23,16 +24,22 @@ namespace PharmacyManager.UserControlMain
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
+            sidePanel1.Width = this.Width / 2;
         }
 
         private void DonBanThuoc_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txt_mathuoc;
-            
+            sidePanel1.Width = this.Width / 2;
+            BindingSource bs = new BindingSource();
+            bs.DataSource = thuoc.Get_THUOC().Tables[0];
+            gridControl1.DataSource = bs;
         }
         int a = 0;
         private void btn_nhapthuoc_Click(object sender, EventArgs e,int _slThuoc=1)
         {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
             int sl=0;
             if (a == 0)
             {
@@ -121,6 +128,10 @@ namespace PharmacyManager.UserControlMain
                 X.setsl(_slThuoc);
                 X.setNTN(hsd);
             }
+            txt_mathuoc.Text = "";
+            timer.Stop();
+            string k = "Time Taken: " + timer.Elapsed.TotalMilliseconds.ToString("#,##0.00 'milliseconds'");
+            int l = 0;
         }
         void NhapThuoc()
         {
@@ -260,6 +271,46 @@ namespace PharmacyManager.UserControlMain
             }
         }
 
-        
+        private void gridView1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRowView selectedRow = (DataRowView)gridView1.GetRow(gridView1.FocusedRowHandle);
+                string maThuoc = selectedRow.Row.ItemArray[0].ToString();
+                txt_mathuoc.Text = maThuoc;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            btn_nhapthuoc_Click(null, null);
+            txt_mathuoc.Text = "";
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btn_nhapthuoc_Click(null, null);
+                txt_mathuoc.Text = "";
+            } catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sidePanel5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

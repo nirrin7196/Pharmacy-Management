@@ -22,6 +22,7 @@ namespace PharmacyManager.UserControlMain
         DateTime now = DateTime.Now;
         private void grid_baoCaoBanHang_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
             BindingSource bs = new BindingSource();
             db.Get_ThongKeBan();
             bs.DataSource = db.Get_ThongKeBan().Tables["DONBAN"];
@@ -72,6 +73,12 @@ namespace PharmacyManager.UserControlMain
             ngay_2.Visible = false;
             thang_2.Visible = false;
             nam_2.Visible = false;
+            txtNgay1.Visible = false;
+            txtThang1.Visible = false;
+            txtNam1.Visible = false;
+            txtNgay2.Visible = false;
+            txtThang2.Visible = false;
+            txtNam2.Visible = false;
             //cbb_DuocSy.Visible = false;
         }
         private void cbb_LoaiThongKe_SelectedIndexChanged(object sender, EventArgs e)
@@ -93,6 +100,9 @@ namespace PharmacyManager.UserControlMain
                 ngay.Visible = true;
                 thang.Visible = true;
                 nam.Visible = true;
+                txtNgay1.Visible = true;
+                txtThang1.Visible = true;
+                txtNam1.Visible = true;
                 BindingSource bs = new BindingSource();
                 db.Get_ThongKeTheoNam(nam.Text, thang.Text, ngay.Text, MaDuocSy);
 
@@ -104,6 +114,8 @@ namespace PharmacyManager.UserControlMain
                 
                 thang.Visible = true;
                 nam.Visible = true;
+                txtThang1.Visible = true;
+                txtNam1.Visible = true;
                 BindingSource bs = new BindingSource();
                 db.Get_ThongKeTheoNam(nam.Text, thang.Text, "0", MaDuocSy);
 
@@ -114,6 +126,7 @@ namespace PharmacyManager.UserControlMain
             if (cbb_LoaiThongKe.SelectedIndex == 2)
             {
                 nam.Visible = true;
+                txtNam1.Visible = true;
                 BindingSource bs = new BindingSource();
                 db.Get_ThongKeTheoNam(nam.Text, "0", "0", MaDuocSy);
 
@@ -128,6 +141,12 @@ namespace PharmacyManager.UserControlMain
                 ngay_2.Visible = true;
                 thang_2.Visible = true;
                 nam_2.Visible = true;
+                txtNgay1.Visible = true;
+                txtThang1.Visible = true;
+                txtNam1.Visible = true;
+                txtNgay2.Visible = true;
+                txtThang2.Visible = true;
+                txtNam2.Visible = true;
                 BindingSource bs = new BindingSource();
                 db.Get_ThongKeKhoangTime(nam.Text, thang.Text, ngay.Text, MaDuocSy, nam_2.Text, thang_2.Text, ngay_2.Text);
 

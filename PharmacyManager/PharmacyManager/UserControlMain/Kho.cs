@@ -25,6 +25,7 @@ namespace PharmacyManager.UserControlMain
 
         private void Kho_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
             BindingSource bs = new BindingSource();
             
             bs.DataSource = kho.Get_Kho().Tables["KhoHang"];
