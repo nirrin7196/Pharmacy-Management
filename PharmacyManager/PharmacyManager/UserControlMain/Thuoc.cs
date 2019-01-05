@@ -219,7 +219,8 @@ namespace PharmacyManager.UserControlMain
             ngay.SelectedIndex = a;
             a = int.Parse(tokens[0])-1;
             thang.SelectedIndex = a;
-            a = int.Parse(tokens[2])-2000;
+            string[] tokens_2 = tokens[2].Split(' ');
+            a = int.Parse(tokens_2[0])-2000;
             nam.SelectedIndex = a;
         }
         public string setNTN(float _nam)
